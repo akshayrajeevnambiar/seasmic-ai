@@ -173,7 +173,11 @@ const Technology = () => {
 
             {/* Tech visualization */}
             <div className="aspect-video bg-black/40 border border-white/[0.05] rounded-lg mb-3 flex items-center justify-center overflow-hidden">
-              <MediaPlayer src={tech.media} isGif={tech.isGif} title={tech.title} />
+              <MediaPlayer
+                src={tech.media}
+                isGif={tech.isGif}
+                title={tech.title}
+              />
             </div>
 
             <p className="text-sm text-muted leading-relaxed font-inter">

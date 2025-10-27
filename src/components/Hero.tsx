@@ -14,12 +14,12 @@ const Hero = () => {
               "linear-gradient(135deg, #0B0B0C 0%, #1a1a1a 50%, #0B0B0C 100%)",
               "linear-gradient(135deg, #0B0B0C 0%, #2a2a2a 50%, #0B0B0C 100%)",
               "linear-gradient(135deg, #0B0B0C 0%, #1a1a1a 50%, #0B0B0C 100%)",
-            ]
+            ],
           }}
           transition={{
             duration: 8,
             repeat: Infinity,
-            ease: "easeInOut"
+            ease: "easeInOut",
           }}
         />
         {/* Dark overlay to maintain readability */}
