@@ -1,11 +1,9 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { animations } from "../constants/design";
+import heroVideo from "../assets/drone-hero-bg.mp4";
 
 const Hero = () => {
-  // Use public path - video will be copied to public folder for Vercel deployment
-  const videoSrc = "/drone-hero-bg.mp4";
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Video background */}
@@ -23,8 +21,10 @@ const Hero = () => {
             const fallback = e.currentTarget.nextElementSibling as HTMLElement;
             if (fallback) fallback.style.display = "block";
           }}
+          onLoadStart={() => console.log("Video loading started")}
+          onCanPlay={() => console.log("Video ready to play")}
         >
-          <source src={videoSrc} type="video/mp4" />
+          <source src={heroVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* Fallback gradient background */}
