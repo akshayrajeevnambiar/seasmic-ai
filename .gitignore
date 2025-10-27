@@ -56,13 +56,8 @@ coverage/
 # Yarn Integrity file
 .yarn-integrity
 
-# Large media files (handled by Vercel deployment)
-*.mp4
-*.mov
-*.avi
-*.mkv
-*.webm
-*.gif
-*.zip
-*.tar.gz
-*.rar
+# Large media files - Only exclude the extremely large ones
+# (Keep smaller files that are essential for the website)
+drone-hero-bg.mp4
+lidar-beam-scanning.mov
+digital-elevation-model.mov

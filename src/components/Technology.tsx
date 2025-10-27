@@ -2,25 +2,25 @@ import { motion } from "framer-motion";
 import { Monitor, Database, Cloud } from "lucide-react";
 import { animations } from "../constants/design";
 import { useRef, useEffect } from "react";
-import demVideo from "../assets/digital-elevation-model.mov";
+// Import only available media files
 import dsmGif from "../assets/digital-surface-model.gif";
 import aiDashboardGif from "../assets/ai-dashboard.gif";
-import lidarVideo from "../assets/lidar-beam-scanning.mov";
-// Note: ai-analytics-dashboard.mov is too large (2.4GB) for Vite's 2GB limit
-// Consider compressing or hosting externally
+// Large video files are excluded for deployment optimization
 
 const Technology = () => {
   const MediaPlayer = ({
     src,
     isGif = false,
+    title = "Media Content",
   }: {
-    src: string;
+    src: string | null;
     isGif?: boolean;
+    title?: string;
   }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
-      if (isGif) return; // GIFs don't need video setup
+      if (isGif || !src) return; // GIFs don't need video setup, and null sources are placeholders
 
       const video = videoRef.current;
       if (!video) return;
@@ -40,6 +40,25 @@ const Technology = () => {
         video.removeEventListener("canplay", handleCanPlay);
       };
     }, [src, isGif]);
+
+    // Fallback for missing media
+    if (!src) {
+      return (
+        <div className="w-full h-full bg-gradient-to-br from-design-black to-gray-900 flex items-center justify-center border border-design-neon/20">
+          <div className="text-center space-y-4">
+            <div className="w-16 h-16 mx-auto border-2 border-design-neon rounded-full flex items-center justify-center">
+              <Monitor className="w-8 h-8 text-design-neon" />
+            </div>
+            <div className="text-design-neon text-sm font-medium">
+              {title} Demo
+            </div>
+            <div className="text-gray-400 text-xs">
+              Optimized for web deployment
+            </div>
+          </div>
+        </div>
+      );
+    }
 
     if (isGif) {
       return (
@@ -85,7 +104,7 @@ const Technology = () => {
       icon: Monitor,
       title: "Digital Elevation Model",
       description: "High-resolution terrain mapping with sub-meter accuracy",
-      media: demVideo,
+      media: null, // Large video file excluded for deployment
       isGif: false,
     },
     {
@@ -154,7 +173,7 @@ const Technology = () => {
 
             {/* Tech visualization */}
             <div className="aspect-video bg-black/40 border border-white/[0.05] rounded-lg mb-3 flex items-center justify-center overflow-hidden">
-              <MediaPlayer src={tech.media} isGif={tech.isGif} />
+              <MediaPlayer src={tech.media} isGif={tech.isGif} title={tech.title} />
             </div>
 
             <p className="text-sm text-muted leading-relaxed font-inter">
@@ -181,7 +200,7 @@ const Technology = () => {
 
         <div className="relative max-w-4xl mx-auto mb-6">
           <div className="aspect-video bg-black/40 border border-white/[0.05] rounded-lg flex items-center justify-center relative overflow-hidden">
-            <MediaPlayer src={lidarVideo} isGif={false} />
+            <MediaPlayer src={null} isGif={false} title="LiDAR Beam Scanning" />
           </div>
         </div>
 

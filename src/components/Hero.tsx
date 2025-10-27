@@ -1,24 +1,29 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { animations } from "../constants/design";
-import heroVideo from "../assets/drone-hero-bg.mp4";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video background */}
+      {/* Animated gradient background (fallback for missing video) */}
       <div className="absolute inset-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src={heroVideo} type="video/mp4" />
-        </video>
+        <motion.div
+          className="w-full h-full bg-gradient-to-br from-design-black via-gray-900 to-design-black"
+          animate={{
+            background: [
+              "linear-gradient(135deg, #0B0B0C 0%, #1a1a1a 50%, #0B0B0C 100%)",
+              "linear-gradient(135deg, #0B0B0C 0%, #2a2a2a 50%, #0B0B0C 100%)",
+              "linear-gradient(135deg, #0B0B0C 0%, #1a1a1a 50%, #0B0B0C 100%)",
+            ]
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
         {/* Dark overlay to maintain readability */}
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/40" />
       </div>
 
       {/* Subtle neon grid overlay on video */}
