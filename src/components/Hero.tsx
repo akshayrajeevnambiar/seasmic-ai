@@ -3,12 +3,34 @@ import { ChevronDown } from "lucide-react";
 import { animations } from "../constants/design";
 
 const Hero = () => {
+  // Use public path - video will be copied to public folder for Vercel deployment
+  const videoSrc = "/drone-hero-bg.mp4";
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated gradient background (fallback for missing video) */}
+      {/* Video background */}
       <div className="absolute inset-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          onError={(e) => {
+            console.log("Video failed to load, showing gradient fallback");
+            // Hide video and show gradient fallback
+            e.currentTarget.style.display = "none";
+            const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+            if (fallback) fallback.style.display = "block";
+          }}
+        >
+          <source src={videoSrc} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        {/* Fallback gradient background */}
         <motion.div
-          className="w-full h-full bg-gradient-to-br from-design-black via-gray-900 to-design-black"
+          className="absolute inset-0 w-full h-full bg-gradient-to-br from-design-black via-gray-900 to-design-black"
+          style={{ display: "none" }}
           animate={{
             background: [
               "linear-gradient(135deg, #0B0B0C 0%, #1a1a1a 50%, #0B0B0C 100%)",
@@ -23,7 +45,7 @@ const Hero = () => {
           }}
         />
         {/* Dark overlay to maintain readability */}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
 
       {/* Subtle neon grid overlay on video */}

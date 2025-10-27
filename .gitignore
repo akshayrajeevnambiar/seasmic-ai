@@ -57,7 +57,8 @@ coverage/
 .yarn-integrity
 
 # Large media files - Only exclude the extremely large ones
-# (Keep smaller files that are essential for the website)
+# (Keep essential video files for hero section)
 drone-hero-bg.mp4
+public/drone-hero-bg.mp4
 lidar-beam-scanning.mov
 digital-elevation-model.mov
