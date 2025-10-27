@@ -1,23 +1,23 @@
-import { useState } from 'react';
-import type { FormEvent, ChangeEvent } from 'react';
-import { motion } from 'framer-motion';
-import { Send, MapPin, Phone, Mail } from 'lucide-react';
-import { animations } from '../constants/design';
+import { useState } from "react";
+import type { FormEvent, ChangeEvent } from "react";
+import { motion } from "framer-motion";
+import { Send, MapPin, Phone, Mail } from "lucide-react";
+import { animations } from "../constants/design";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    company: '',
-    email: '',
-    message: '',
+    name: "",
+    company: "",
+    email: "",
+    message: "",
   });
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     // Handle form submission here
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     // Reset form
-    setFormData({ name: '', company: '', email: '', message: '' });
+    setFormData({ name: "", company: "", email: "", message: "" });
   };
 
   const handleChange = (
@@ -32,18 +32,18 @@ const Contact = () => {
   const contactInfo = [
     {
       icon: MapPin,
-      title: 'Headquarters',
-      detail: 'Calgary, Alberta, Canada',
+      title: "Headquarters",
+      detail: "Calgary, Alberta, Canada",
     },
     {
       icon: Phone,
-      title: 'Phone',
-      detail: '+1 (403) 555-0123',
+      title: "Phone",
+      detail: "+1 (403) 555-0123",
     },
     {
       icon: Mail,
-      title: 'Email',
-      detail: 'contact@seismic-ai.com',
+      title: "Email",
+      detail: "contact@seismic-ai.com",
     },
   ];
 
@@ -54,10 +54,9 @@ const Contact = () => {
           className="text-4xl md:text-6xl font-bold mb-6 text-white font-space tracking-tighter"
           {...animations.minimal}
         >
-          Partner with{' '}
-          <span className="text-neon">Seismic AI</span>
+          Partner with <span className="text-neon">Seismic AI</span>
         </motion.h2>
-        
+
         <motion.p
           className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed font-inter"
           initial={{ opacity: 0, y: 20 }}
@@ -65,7 +64,8 @@ const Contact = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          Ready to revolutionize your seismic operations? Let's discuss how we can transform your exploration capabilities.
+          Ready to revolutionize your seismic operations? Let's discuss how we
+          can transform your exploration capabilities.
         </motion.p>
       </div>
 
@@ -179,7 +179,9 @@ const Contact = () => {
           className="space-y-6"
         >
           <div className="glass-panel neon-border-t p-8">
-            <h3 className="text-2xl font-bold mb-6 text-white font-space">Get in Touch</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white font-space">
+              Get in Touch
+            </h3>
 
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
@@ -192,8 +194,12 @@ const Contact = () => {
                     <info.icon size={18} className="text-neon" />
                   </div>
                   <div>
-                    <h4 className="font-semibold text-white mb-1 font-space">{info.title}</h4>
-                    <p className="text-muted text-sm font-inter">{info.detail}</p>
+                    <h4 className="font-semibold text-white mb-1 font-space">
+                      {info.title}
+                    </h4>
+                    <p className="text-muted text-sm font-inter">
+                      {info.detail}
+                    </p>
                   </div>
                 </motion.div>
               ))}

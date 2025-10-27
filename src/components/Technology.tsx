@@ -10,12 +10,18 @@ import lidarVideo from "../assets/lidar-beam-scanning.mov";
 // Consider compressing or hosting externally
 
 const Technology = () => {
-  const MediaPlayer = ({ src, isGif = false }: { src: string; isGif?: boolean }) => {
+  const MediaPlayer = ({
+    src,
+    isGif = false,
+  }: {
+    src: string;
+    isGif?: boolean;
+  }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     useEffect(() => {
       if (isGif) return; // GIFs don't need video setup
-      
+
       const video = videoRef.current;
       if (!video) return;
 
