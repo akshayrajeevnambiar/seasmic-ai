@@ -1,39 +1,44 @@
-import { motion } from 'framer-motion';
-import { Zap, Brain, Globe, Shield } from 'lucide-react';
-import { animations } from '../constants/design';
+import { motion } from "framer-motion";
+import { Zap, Brain, Globe, Shield } from "lucide-react";
+import { animations } from "../constants/design";
+import AnimatedCounter from "./AnimatedCounter";
 
 const Solution = () => {
   const solutions = [
     {
       icon: Zap,
-      title: 'LiDAR UAVs',
-      description: 'Advanced drone technology for precision aerial surveying with minimal environmental impact',
-      benefits: ['60% cost reduction', 'Real-time data', 'Zero emissions'],
+      title: "LiDAR UAVs",
+      description:
+        "Advanced drone technology for precision aerial surveying with minimal environmental impact",
+      benefits: ["60% cost reduction", "Real-time data", "Zero emissions"],
     },
     {
       icon: Brain,
-      title: 'AI Analytics',
-      description: 'Machine learning algorithms process seismic data with unprecedented accuracy and speed',
-      benefits: ['95% accuracy', 'Instant analysis', 'Predictive insights'],
+      title: "AI Analytics",
+      description:
+        "Machine learning algorithms process seismic data with unprecedented accuracy and speed",
+      benefits: ["95% accuracy", "Instant analysis", "Predictive insights"],
     },
     {
       icon: Globe,
-      title: 'Real-Time Mapping',
-      description: 'Live subsurface visualization enables immediate decision-making and exploration optimization',
-      benefits: ['24/7 monitoring', 'Interactive 3D', 'Cloud access'],
+      title: "Real-Time Mapping",
+      description:
+        "Live subsurface visualization enables immediate decision-making and exploration optimization",
+      benefits: ["24/7 monitoring", "Interactive 3D", "Cloud access"],
     },
     {
       icon: Shield,
-      title: 'ESG Compliance',
-      description: 'Sustainable exploration methods that exceed environmental and safety standards',
-      benefits: ['Zero footprint', 'Regulatory ready', 'Community safe'],
+      title: "ESG Compliance",
+      description:
+        "Sustainable exploration methods that exceed environmental and safety standards",
+      benefits: ["Zero footprint", "Regulatory ready", "Community safe"],
     },
   ];
 
   const metrics = [
-    { value: '10x', label: 'Faster Surveys' },
-    { value: '95%', label: 'Data Accuracy' },
-    { value: '60%', label: 'Cost Reduction' },
+    { value: 10, suffix: "x", label: "Faster Surveys" },
+    { value: 95, suffix: "%", label: "Data Accuracy" },
+    { value: 60, suffix: "%", label: "Cost Reduction" },
   ];
 
   return (
@@ -43,10 +48,9 @@ const Solution = () => {
           className="text-4xl md:text-6xl font-bold mb-6 text-white font-space tracking-tighter"
           {...animations.minimal}
         >
-          Seismic{' '}
-          <span className="text-neon">Intelligence</span>
+          Seismic <span className="text-neon">Intelligence</span>
         </motion.h2>
-        
+
         <motion.p
           className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed font-inter"
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +58,8 @@ const Solution = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          Revolutionary AI-powered LiDAR platform transforms exploration from weeks to hours.
+          Revolutionary AI-powered LiDAR platform transforms exploration from
+          weeks to hours.
         </motion.p>
       </div>
 
@@ -69,11 +74,15 @@ const Solution = () => {
         {metrics.map((metric, index) => (
           <div key={index} className="text-center">
             <div className="text-3xl md:text-5xl font-bold text-neon mb-2 font-space">
-              {metric.value}
+              <AnimatedCounter
+                from={0}
+                to={metric.value}
+                duration={2.5}
+                suffix={metric.suffix}
+                className="text-3xl md:text-5xl font-bold text-neon font-space"
+              />
             </div>
-            <div className="text-sm text-muted font-inter">
-              {metric.label}
-            </div>
+            <div className="text-sm text-muted font-inter">{metric.label}</div>
           </div>
         ))}
       </motion.div>
@@ -89,28 +98,28 @@ const Solution = () => {
             className="glass-panel neon-border-t p-6 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: index * 0.1,
-              ease: [0.22, 1, 0.36, 1]
+              ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
           >
             <div className="mb-4">
-              <solution.icon 
-                size={24} 
-                className="text-muted group-hover:text-neon transition-colors duration-300" 
+              <solution.icon
+                size={24}
+                className="text-muted group-hover:text-neon transition-colors duration-300"
               />
             </div>
-            
+
             <h3 className="text-lg font-semibold text-white mb-2 font-space">
               {solution.title}
             </h3>
-            
+
             <p className="text-sm text-muted mb-4 leading-relaxed font-inter">
               {solution.description}
             </p>
-            
+
             <div className="space-y-1">
               {solution.benefits.map((benefit, benefitIndex) => (
                 <div
@@ -138,7 +147,8 @@ const Solution = () => {
           Ready to Transform Your Exploration?
         </h3>
         <p className="text-muted text-lg mb-6 font-inter">
-          Join leading energy companies using Seismic AI to reduce costs and accelerate discovery.
+          Join leading energy companies using Seismic AI to reduce costs and
+          accelerate discovery.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

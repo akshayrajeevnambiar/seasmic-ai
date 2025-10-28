@@ -13,7 +13,7 @@ const Hero = () => {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           className="w-full h-full object-cover"
           style={{
             willChange: "auto",

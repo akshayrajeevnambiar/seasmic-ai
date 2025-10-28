@@ -1,42 +1,49 @@
-import { motion } from 'framer-motion';
-import { TrendingUp, DollarSign, Clock, Zap } from 'lucide-react';
-import { animations } from '../constants/design';
+import { motion } from "framer-motion";
+import { TrendingUp, DollarSign, Clock, Zap } from "lucide-react";
+import { animations } from "../constants/design";
+import AnimatedCounter from "./AnimatedCounter";
 
 const ROI = () => {
   const metrics = [
     {
       icon: DollarSign,
-      value: '$2.4M',
-      label: 'Cost Savings',
-      description: 'Average annual savings per project',
+      value: 2.4,
+      prefix: "$",
+      suffix: "M",
+      label: "Cost Savings",
+      description: "Average annual savings per project",
+      decimals: 1,
     },
     {
       icon: Clock,
-      value: '85%',
-      label: 'Time Reduction',
-      description: 'Faster survey completion',
+      value: 85,
+      suffix: "%",
+      label: "Time Reduction",
+      description: "Faster survey completion",
     },
     {
       icon: TrendingUp,
-      value: '300%',
-      label: 'ROI Increase',
-      description: 'Return on investment',
+      value: 300,
+      suffix: "%",
+      label: "ROI Increase",
+      description: "Return on investment",
     },
     {
       icon: Zap,
-      value: '95%',
-      label: 'Accuracy',
-      description: 'Data precision guarantee',
+      value: 95,
+      suffix: "%",
+      label: "Accuracy",
+      description: "Data precision guarantee",
     },
   ];
 
   const benefits = [
-    'Eliminate heavy machinery costs',
-    'Reduce environmental permits',
-    'Accelerate decision-making',
-    'Minimize operational risks',
-    'Improve data quality',
-    'Enable real-time monitoring',
+    "Eliminate heavy machinery costs",
+    "Reduce environmental permits",
+    "Accelerate decision-making",
+    "Minimize operational risks",
+    "Improve data quality",
+    "Enable real-time monitoring",
   ];
 
   return (
@@ -46,10 +53,9 @@ const ROI = () => {
           className="text-4xl md:text-6xl font-bold mb-6 text-white font-space tracking-tighter"
           {...animations.minimal}
         >
-          Proven{' '}
-          <span className="text-neon">ROI</span>
+          Proven <span className="text-neon">ROI</span>
         </motion.h2>
-        
+
         <motion.p
           className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed font-inter"
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +63,8 @@ const ROI = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          Seismic AI delivers measurable results with significant cost savings and operational improvements.
+          Seismic AI delivers measurable results with significant cost savings
+          and operational improvements.
         </motion.p>
       </div>
 
@@ -69,28 +76,36 @@ const ROI = () => {
             className="glass-panel neon-border-t p-6 text-center group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: index * 0.1,
-              ease: [0.22, 1, 0.36, 1]
+              ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
           >
             <div className="mb-4">
-              <metric.icon 
-                size={32} 
-                className="text-muted group-hover:text-neon transition-colors duration-300 mx-auto" 
+              <metric.icon
+                size={32}
+                className="text-muted group-hover:text-neon transition-colors duration-300 mx-auto"
               />
             </div>
-            
+
             <div className="text-3xl font-bold text-neon mb-2 font-space">
-              {metric.value}
+              <AnimatedCounter
+                from={0}
+                to={metric.value}
+                duration={2.5}
+                prefix={metric.prefix || ""}
+                suffix={metric.suffix || ""}
+                decimals={metric.decimals || 0}
+                className="text-3xl font-bold text-neon font-space"
+              />
             </div>
-            
+
             <h3 className="text-lg font-semibold text-white mb-2 font-space">
               {metric.label}
             </h3>
-            
+
             <p className="text-sm text-muted leading-relaxed font-inter">
               {metric.description}
             </p>
@@ -112,7 +127,7 @@ const ROI = () => {
         <h3 className="text-2xl font-bold text-white mb-8 text-center font-space">
           Key Benefits
         </h3>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {benefits.map((benefit, index) => (
             <motion.div
@@ -120,10 +135,10 @@ const ROI = () => {
               className="flex items-center space-x-3 p-3 rounded-lg bg-black/20 hover:bg-black/40 transition-colors duration-300"
               initial={{ opacity: 0, x: -10 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ 
-                duration: 0.5, 
+              transition={{
+                duration: 0.5,
                 delay: 0.6 + index * 0.05,
-                ease: [0.22, 1, 0.36, 1]
+                ease: [0.22, 1, 0.36, 1],
               }}
               viewport={{ once: true }}
             >

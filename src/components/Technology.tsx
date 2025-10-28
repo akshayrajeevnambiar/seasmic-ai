@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Monitor, Database, Cloud } from "lucide-react";
 import { animations } from "../constants/design";
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 // Import available media files - now including compressed videos
 import dsmGif from "../assets/digital-surface-model.gif";
 import aiDashboardGif from "../assets/ai-dashboard.gif";
@@ -19,9 +19,30 @@ const Technology = () => {
     title?: string;
   }) => {
     const videoRef = useRef<HTMLVideoElement>(null);
+    const [isInView, setIsInView] = useState(false);
 
     useEffect(() => {
-      if (isGif || !src) return; // GIFs don't need video setup, and null sources are placeholders
+      if (isGif || !src) return;
+
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setIsInView(true);
+            observer.disconnect();
+          }
+        },
+        { threshold: 0.1 }
+      );
+
+      if (videoRef.current) {
+        observer.observe(videoRef.current);
+      }
+
+      return () => observer.disconnect();
+    }, [isGif, src]);
+
+    useEffect(() => {
+      if (isGif || !src || !isInView) return;
 
       const video = videoRef.current;
       if (!video) return;
@@ -79,12 +100,16 @@ const Technology = () => {
     return (
       <video
         ref={videoRef}
-        autoPlay
+        autoPlay={isInView}
         muted
         loop
         playsInline
-        preload="auto"
+        preload="none"
         className="w-full h-full object-cover"
+        style={{
+          willChange: "auto",
+          transform: "translate3d(0, 0, 0)",
+        }}
         onError={(e) => {
           console.error("Video error:", e);
           console.error("Source:", src);
@@ -93,8 +118,12 @@ const Technology = () => {
         onCanPlay={() => console.log("Video can play:", src)}
         onLoadedData={() => console.log("Video data loaded:", src)}
       >
-        <source src={src} type="video/quicktime" />
-        <source src={src} type="video/mp4" />
+        {isInView && (
+          <>
+            <source src={src} type="video/quicktime" />
+            <source src={src} type="video/mp4" />
+          </>
+        )}
         Your browser does not support the video tag.
       </video>
     );
