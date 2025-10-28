@@ -2,10 +2,11 @@ import { motion } from "framer-motion";
 import { Monitor, Database, Cloud } from "lucide-react";
 import { animations } from "../constants/design";
 import { useRef, useEffect } from "react";
-// Import only available media files
+// Import available media files - now including compressed videos
 import dsmGif from "../assets/digital-surface-model.gif";
 import aiDashboardGif from "../assets/ai-dashboard.gif";
-// Large video files are excluded for deployment optimization
+import demVideo from "../assets/digital-elevation-model.mp4";
+import lidarVideo from "../assets/lidar-beam-scanning.mp4";
 
 const Technology = () => {
   const MediaPlayer = ({
@@ -104,7 +105,7 @@ const Technology = () => {
       icon: Monitor,
       title: "Digital Elevation Model",
       description: "High-resolution terrain mapping with sub-meter accuracy",
-      media: null, // Large video file excluded for deployment
+      media: demVideo,
       isGif: false,
     },
     {
@@ -204,7 +205,7 @@ const Technology = () => {
 
         <div className="relative max-w-4xl mx-auto mb-6">
           <div className="aspect-video bg-black/40 border border-white/[0.05] rounded-lg flex items-center justify-center relative overflow-hidden">
-            <MediaPlayer src={null} isGif={false} title="LiDAR Beam Scanning" />
+            <MediaPlayer src={lidarVideo} isGif={false} title="LiDAR Beam Scanning" />
           </div>
         </div>
 

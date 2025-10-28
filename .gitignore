@@ -57,6 +57,5 @@ coverage/
 .yarn-integrity
 
 # Large media files - Only exclude the extremely large ones
-# (Compressed hero video is now small enough to include)
-lidar-beam-scanning.mov
-digital-elevation-model.mov
+# (Compressed videos are now small enough to include)
+# All video files under 70MB are now included
