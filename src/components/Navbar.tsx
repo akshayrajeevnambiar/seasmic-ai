@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import seismicaLogo from "../assets/seismica-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,16 +11,16 @@ const Navbar = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Solution', href: '#solution' },
-    { name: 'Features', href: '#features' },
-    { name: 'Technology', href: '#technology' },
-    { name: 'Team', href: '#team' },
-    { name: 'Contact', href: '#contact' },
+    { name: "Solution", href: "#solution" },
+    { name: "Features", href: "#features" },
+    { name: "Technology", href: "#technology" },
+    { name: "Team", href: "#team" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -28,8 +29,8 @@ const Navbar = () => {
       animate={{ y: 0 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-black/80 backdrop-blur-md border-b border-white/[0.08]'
-          : 'bg-transparent'
+          ? "bg-black/80 backdrop-blur-md border-b border-white/[0.08]"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-screen-xl mx-auto px-6">
@@ -37,14 +38,13 @@ const Navbar = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.02 }}
-            className="flex items-center space-x-3"
+            className="flex items-center"
           >
-            <div className="w-8 h-8 border border-neon/30 rounded-lg flex items-center justify-center">
-              <span className="text-neon font-bold text-sm font-space">S</span>
-            </div>
-            <span className="text-lg font-bold text-white font-space tracking-wide">
-              Seismic AI
-            </span>
+            <img
+              src={seismicaLogo}
+              alt="Seismic AI Logo"
+              className="w-20 h-20 object-contain"
+            />
           </motion.div>
 
           {/* Desktop Navigation */}

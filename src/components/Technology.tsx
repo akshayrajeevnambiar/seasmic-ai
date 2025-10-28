@@ -205,7 +205,11 @@ const Technology = () => {
 
         <div className="relative max-w-4xl mx-auto mb-6">
           <div className="aspect-video bg-black/40 border border-white/[0.05] rounded-lg flex items-center justify-center relative overflow-hidden">
-            <MediaPlayer src={lidarVideo} isGif={false} title="LiDAR Beam Scanning" />
+            <MediaPlayer
+              src={lidarVideo}
+              isGif={false}
+              title="LiDAR Beam Scanning"
+            />
           </div>
         </div>
 
