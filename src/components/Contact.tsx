@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { FormEvent, ChangeEvent } from "react";
 import { motion } from "framer-motion";
 import { Send, MapPin, Phone, Mail } from "lucide-react";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
 import { animations } from "../constants/design";
 
 const Contact = () => {
@@ -17,20 +17,20 @@ const Contact = () => {
     e.preventDefault();
     // Handle form submission here
     console.log("Form submitted:", formData);
-    
+
     // Show success toast
-    toast.success('Message sent successfully! We\'ll get back to you soon.', {
+    toast.success("Message sent successfully! We'll get back to you soon.", {
       duration: 4000,
-      position: 'top-center',
+      position: "top-center",
       style: {
-        background: '#0B0B0C',
-        color: '#ffffff',
-        border: '1px solid #00E5FF',
-        borderRadius: '12px',
-        fontFamily: 'Inter, sans-serif',
+        background: "#0B0B0C",
+        color: "#ffffff",
+        border: "1px solid #00E5FF",
+        borderRadius: "12px",
+        fontFamily: "Inter, sans-serif",
       },
     });
-    
+
     // Reset form
     setFormData({ name: "", company: "", email: "", message: "" });
   };

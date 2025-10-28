@@ -13,7 +13,13 @@ const Hero = () => {
           muted
           loop
           playsInline
+          preload="metadata"
           className="w-full h-full object-cover"
+          style={{
+            willChange: "auto",
+            transform: "translate3d(0, 0, 0)",
+            backfaceVisibility: "hidden",
+          }}
           onError={(e) => {
             console.log("Video failed to load, showing gradient fallback");
             // Hide video and show gradient fallback
@@ -48,57 +54,8 @@ const Hero = () => {
         <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      {/* Subtle neon grid overlay on video */}
-      <div className="absolute inset-0 opacity-[0.08] z-10">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(rgba(0, 229, 255, 0.4) 1px, transparent 1px),
-              linear-gradient(90deg, rgba(0, 229, 255, 0.4) 1px, transparent 1px)
-            `,
-            backgroundSize: "120px 120px",
-          }}
-          animate={{
-            backgroundPosition: ["0px 0px", "120px 120px", "0px 0px"],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      </div>
-
-      {/* Neon scan lines over video */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden z-20">
-        {/* Slow moving neon lines */}
-        <motion.div
-          className="absolute top-1/4 w-full h-[1px] bg-gradient-to-r from-transparent via-neon/20 to-transparent"
-          animate={{
-            x: ["-100%", "100%"],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/3 w-full h-[1px] bg-gradient-to-r from-transparent via-neon/10 to-transparent"
-          animate={{
-            x: ["100%", "-100%"],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-        />
-      </div>
-
       {/* Content */}
-      <div className="relative z-30 max-w-screen-xl mx-auto px-6 text-center">
+      <div className="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
         <motion.div {...animations.minimal}>
           {/* Centered headline (two lines) */}
           <motion.h1
@@ -159,7 +116,7 @@ const Hero = () => {
 
       {/* Minimal scroll indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-30"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7, delay: 1 }}
