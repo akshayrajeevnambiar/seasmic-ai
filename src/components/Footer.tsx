@@ -27,20 +27,20 @@ const Footer = () => {
   ];
 
   const handleNavigation = (link: string) => {
-    if (location.pathname !== '/') {
+    if (location.pathname !== "/") {
       // If not on homepage, navigate to homepage first, then scroll
-      navigate('/');
+      navigate("/");
       setTimeout(() => {
         const element = document.querySelector(link);
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
+          element.scrollIntoView({ behavior: "smooth" });
         }
       }, 100);
     } else {
       // If on homepage, just scroll to section
       const element = document.querySelector(link);
       if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
+        element.scrollIntoView({ behavior: "smooth" });
       }
     }
   };

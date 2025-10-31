@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowLeft,
   ArrowUp,
   ChevronDown,
   ChevronUp,
@@ -61,7 +60,7 @@ const PrivacyPolicyPage: React.FC = () => {
     },
     {
       id: "cookies",
-      title: "Cookies & Tracking",
+      title: "Data Storage & Privacy",
       icon: <Lock className="w-4 h-4" />,
     },
     {
@@ -238,6 +237,33 @@ const PrivacyPolicyPage: React.FC = () => {
                 (collectively, the "Services"). By using our Services, you
                 consent to the data practices described in this policy.
               </p>
+              
+              <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 mb-6">
+                <h4 className="text-green-400 font-semibold mb-3 font-space flex items-center">
+                  <Shield className="w-5 h-5 mr-2" />
+                  Privacy-First Approach
+                </h4>
+                <p className="text-gray-300 text-sm leading-relaxed mb-3">
+                  <strong>Our website prioritizes your privacy:</strong> We do NOT use cookies, 
+                  analytics tracking, or any data collection technologies. Only minimal sessionStorage 
+                  is used for basic UI functionality that gets cleared when you close your browser.
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
+                    ✓ No Cookies
+                  </span>
+                  <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
+                    ✓ No Tracking
+                  </span>
+                  <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
+                    ✓ No Analytics
+                  </span>
+                  <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
+                    ✓ Session-Only Storage
+                  </span>
+                </div>
+              </div>
+              
               <div className="bg-gradient-to-r from-[#00E5FF]/10 to-blue-500/10 border border-[#00E5FF]/20 rounded-xl p-6">
                 <h4 className="text-[#00E5FF] font-semibold mb-3 font-space">
                   Key Principles
@@ -354,12 +380,11 @@ const PrivacyPolicyPage: React.FC = () => {
                         <div className="w-2 h-2 bg-[#00E5FF] rounded-full mt-2 flex-shrink-0"></div>
                         <div>
                           <strong className="text-white">
-                            Usage Analytics:
+                            Website Usage:
                           </strong>
                           <span className="text-gray-300 ml-2">
-                            Pages visited, features used, time spent, click
-                            patterns, and interaction data to improve our
-                            services
+                            We do NOT collect usage analytics, page visits, or behavioral data. 
+                            Our website operates without tracking your activities.
                           </span>
                         </div>
                       </li>
@@ -565,11 +590,8 @@ const PrivacyPolicyPage: React.FC = () => {
                         management
                       </li>
                       <li>
-                        • Analytics services for platform optimization
-                        (anonymized data only)
-                      </li>
-                      <li>
                         • Security services for threat detection and prevention
+                        (when applicable)
                       </li>
                     </ul>
                   </div>
@@ -773,7 +795,7 @@ const PrivacyPolicyPage: React.FC = () => {
                         (up to 7 years)
                       </li>
                       <li>
-                        • Anonymized analytics data may be retained indefinitely
+                        • No analytics data is collected or retained
                       </li>
                     </ul>
                   </div>
@@ -781,15 +803,15 @@ const PrivacyPolicyPage: React.FC = () => {
                   <div className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6">
                     <div className="flex items-center justify-between mb-4">
                       <h4 className="text-[#00E5FF] font-semibold font-space">
-                        Usage & Analytics Data
+                        Session Data
                       </h4>
-                      <span className="text-blue-400 text-sm font-medium bg-blue-400/10 px-3 py-1 rounded-full">
-                        24 Months
+                      <span className="text-green-400 text-sm font-medium bg-green-400/10 px-3 py-1 rounded-full">
+                        Session Only
                       </span>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      Technical logs, usage patterns, and performance data are
-                      retained for up to 24 months for service improvement.
+                      Minimal UI state data (loading screen preferences) is stored 
+                      only during your browser session and automatically deleted when you close the browser.
                     </p>
                     <ul className="space-y-1 text-gray-400 text-sm">
                       <li>
@@ -922,85 +944,69 @@ const PrivacyPolicyPage: React.FC = () => {
               </div>
             </Section>
 
-            {/* Cookies & Tracking Section */}
+            {/* Data Storage & Privacy Section */}
             <Section
               id="cookies"
-              title="Cookies & Tracking Technologies"
+              title="Data Storage & Privacy Technologies"
               isExpanded={expandedSections.has("cookies")}
               onToggle={() => toggleSection("cookies")}
             >
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed">
-                  We use cookies and similar tracking technologies to enhance
-                  your experience, analyze usage patterns, and improve our
-                  services. You have control over these technologies:
+                  We prioritize your privacy by using minimal data storage technologies. 
+                  Our website does <strong className="text-[#00E5FF]">NOT use cookies</strong> for tracking or analytics.
                 </p>
 
                 <div className="space-y-4">
-                  <div className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6">
-                    <h4 className="text-[#00E5FF] font-semibold mb-4 font-space">
-                      Essential Cookies
+                  <div className="bg-green-500/10 border border-green-500/20 rounded-xl p-6">
+                    <h4 className="text-green-400 font-semibold mb-4 font-space">
+                      What We Actually Use
                     </h4>
                     <p className="text-gray-300 text-sm mb-3">
-                      Required for basic website functionality and security.
-                      These cannot be disabled without affecting core features:
+                      We only use browser sessionStorage for basic user interface functionality:
                     </p>
                     <ul className="space-y-1 text-gray-300 text-sm">
-                      <li>• Authentication and session management</li>
-                      <li>• Security tokens and CSRF protection</li>
-                      <li>• Load balancing and performance optimization</li>
-                      <li>• User interface preferences and settings</li>
+                      <li>• Remembering if you've seen the loading animation (session only)</li>
+                      <li>• No personal data is stored</li>
+                      <li>• Data is automatically cleared when you close your browser</li>
+                      <li>• No tracking or analytics of any kind</li>
                     </ul>
                   </div>
 
-                  <div className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6">
-                    <h4 className="text-[#00E5FF] font-semibold mb-4 font-space">
-                      Analytics Cookies
+                  <div className="bg-red-500/10 border border-red-500/20 rounded-xl p-6">
+                    <h4 className="text-red-400 font-semibold mb-4 font-space">
+                      What We Don't Use
                     </h4>
                     <p className="text-gray-300 text-sm mb-3">
-                      Help us understand how users interact with our platform
-                      (anonymized data):
+                      We explicitly do NOT use the following tracking technologies:
                     </p>
                     <ul className="space-y-1 text-gray-300 text-sm">
-                      <li>• Page views and navigation patterns</li>
-                      <li>• Feature usage and adoption metrics</li>
-                      <li>• Performance monitoring and error tracking</li>
-                      <li>• A/B testing and optimization experiments</li>
-                    </ul>
-                  </div>
-
-                  <div className="bg-white/[0.02] border border-white/[0.08] rounded-xl p-6">
-                    <h4 className="text-[#00E5FF] font-semibold mb-4 font-space">
-                      Functional Cookies
-                    </h4>
-                    <p className="text-gray-300 text-sm mb-3">
-                      Enhance your user experience with personalized features:
-                    </p>
-                    <ul className="space-y-1 text-gray-300 text-sm">
-                      <li>• Language and region preferences</li>
-                      <li>• Dashboard layout and customizations</li>
-                      <li>• Recently accessed files and projects</li>
-                      <li>• Notification preferences and settings</li>
+                      <li>• ❌ HTTP Cookies</li>
+                      <li>• ❌ Google Analytics or any analytics services</li>
+                      <li>• ❌ Social media tracking pixels</li>
+                      <li>• ❌ Advertising cookies or trackers</li>
+                      <li>• ❌ Cross-site tracking technologies</li>
+                      <li>• ❌ Persistent local storage of personal data</li>
                     </ul>
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-r from-yellow-500/10 to-orange-500/10 border border-yellow-500/20 rounded-xl p-6">
-                  <h4 className="text-yellow-400 font-semibold mb-3 font-space">
-                    Cookie Management
+                <div className="bg-gradient-to-r from-blue-500/10 to-cyan-500/10 border border-blue-500/20 rounded-xl p-6">
+                  <h4 className="text-blue-400 font-semibold mb-3 font-space">
+                    Privacy-First Approach
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    You can control cookie settings through your browser
-                    preferences or our privacy controls panel. Note that
-                    disabling certain cookies may limit platform functionality.
+                    Our website is designed with privacy in mind. We don't track your behavior, 
+                    build profiles, or share your data with third parties. The minimal sessionStorage 
+                    we use enhances your experience without compromising your privacy.
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <button className="bg-[#00E5FF]/10 text-[#00E5FF] px-4 py-2 rounded-lg text-sm font-medium hover:bg-[#00E5FF]/20 transition-colors">
-                      Manage Cookie Preferences
-                    </button>
-                    <button className="bg-white/[0.05] text-gray-300 px-4 py-2 rounded-lg text-sm font-medium hover:bg-white/[0.10] transition-colors">
-                      View Cookie Policy
-                    </button>
+                    <div className="bg-[#00E5FF]/10 text-[#00E5FF] px-4 py-2 rounded-lg text-sm font-medium">
+                      ✓ No Cookie Banner Needed
+                    </div>
+                    <div className="bg-green-500/10 text-green-400 px-4 py-2 rounded-lg text-sm font-medium">
+                      ✓ GDPR Compliant by Design
+                    </div>
                   </div>
                 </div>
               </div>
@@ -1049,7 +1055,6 @@ const PrivacyPolicyPage: React.FC = () => {
                     <div className="text-gray-300 text-sm leading-relaxed">
                       <p>Seismic AI Inc.</p>
                       <p>Attn: Privacy Team</p>
-                      <p>123 Innovation Drive</p>
                       <p>Calgary, AB T2P 2Y5</p>
                       <p>Canada</p>
                     </div>
