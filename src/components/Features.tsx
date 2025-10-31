@@ -115,6 +115,18 @@ const Features = () => {
         >
           Experience Our Technology
         </motion.a>
+
+        {/* AI Disclaimer */}
+        <motion.p
+          className="text-gray-400 font-inter text-sm mt-6 max-w-2xl"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          viewport={{ once: true }}
+        >
+          <strong className="text-orange-400">Note:</strong> AI-powered features provide analytical assistance. 
+          All outputs require validation by qualified professionals before operational use.
+        </motion.p>
       </motion.div>
     </section>
   );

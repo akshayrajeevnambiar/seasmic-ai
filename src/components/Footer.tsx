@@ -81,7 +81,7 @@ const Footer = () => {
               <h3 className="text-white font-semibold mb-6 font-space text-lg">
                 Company
               </h3>
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-6">
                 {company.map((item, index) => (
                   <li key={index}>
                     <a
@@ -93,6 +93,28 @@ const Footer = () => {
                   </li>
                 ))}
               </ul>
+
+              {/* Legal & Compliance Links */}
+              <div className="space-y-3 mb-8">
+                <a
+                  href="#privacy-policy"
+                  className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
+                >
+                  Privacy Policy
+                </a>
+                <a
+                  href="#terms-of-use"
+                  className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
+                >
+                  Terms of Use
+                </a>
+                <a
+                  href="#ethics-ai"
+                  className="text-neon hover:text-white transition-colors duration-300 font-inter font-medium block"
+                >
+                  Ethics & AI Transparency
+                </a>
+              </div>
 
               {/* Connect Section */}
               <h3 className="text-white font-semibold mb-6 font-space text-lg">

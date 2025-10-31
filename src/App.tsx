@@ -10,6 +10,9 @@ import ROI from "./components/ROI.tsx";
 import Team from "./components/Team.tsx";
 import Recognitions from "./components/Recognitions.tsx";
 import Contact from "./components/Contact.tsx";
+import EthicsAI from "./components/EthicsAI.tsx";
+import PrivacyPolicy from "./components/PrivacyPolicy.tsx";
+import TermsOfUse from "./components/TermsOfUse.tsx";
 import Footer from "./components/Footer.tsx";
 import OfflineScreen from "./components/OfflineScreen.tsx";
 import LoadingScreen from "./components/LoadingScreen.tsx";
@@ -55,7 +58,10 @@ function App() {
       <ROI />
       <Team />
       <Recognitions />
+      <EthicsAI />
       <Contact />
+      <PrivacyPolicy />
+      <TermsOfUse />
       <Footer />
     </div>
   );
