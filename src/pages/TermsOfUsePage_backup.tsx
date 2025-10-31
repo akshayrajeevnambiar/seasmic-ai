@@ -124,12 +124,12 @@ const TermsOfUsePage: React.FC = () => {
       setShowBackToTop(scrollY > 300);
 
       // Find active section
-      const sections = tocSections.map(section => ({
+      const sections = tocSections.map((section) => ({
         id: section.id,
-        element: document.getElementById(section.id)
+        element: document.getElementById(section.id),
       }));
 
-      const currentSection = sections.find(section => {
+      const currentSection = sections.find((section) => {
         if (section.element) {
           const rect = section.element.getBoundingClientRect();
           return rect.top <= 100 && rect.bottom >= 100;
@@ -181,35 +181,49 @@ const TermsOfUsePage: React.FC = () => {
     >
       <Helmet>
         <title>Terms of Use | Seismic AI</title>
-        <meta name="description" content="Legal terms governing the use of Seismic AI's data analytics, drone integrations, and SaaS platform for geophysical analysis." />
-        <meta name="keywords" content="terms of use, legal agreement, seismic AI, SaaS platform, geophysical analysis, terms of service" />
+        <meta
+          name="description"
+          content="Legal terms governing the use of Seismic AI's data analytics, drone integrations, and SaaS platform for geophysical analysis."
+        />
+        <meta
+          name="keywords"
+          content="terms of use, legal agreement, seismic AI, SaaS platform, geophysical analysis, terms of service"
+        />
         <link rel="canonical" href="https://seismicai.ca/terms-of-use" />
-        
+
         {/* OpenGraph */}
         <meta property="og:title" content="Terms of Use | Seismic AI" />
-        <meta property="og:description" content="Legal terms governing the use of Seismic AI's data analytics, drone integrations, and SaaS platform." />
+        <meta
+          property="og:description"
+          content="Legal terms governing the use of Seismic AI's data analytics, drone integrations, and SaaS platform."
+        />
         <meta property="og:url" content="https://seismicai.ca/terms-of-use" />
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="Seismic AI" />
-        
+
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Terms of Use | Seismic AI" />
-        <meta name="twitter:description" content="Legal terms for Seismic AI's enterprise geophysical analysis platform." />
-        
+        <meta
+          name="twitter:description"
+          content="Legal terms for Seismic AI's enterprise geophysical analysis platform."
+        />
+
         {/* JSON-LD Schema */}
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TermsOfService",
-          "name": "Seismic AI Terms of Use",
-          "url": "https://seismicai.ca/terms-of-use",
-          "dateModified": "2025-10-30",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Seismic AI",
-            "url": "https://seismicai.ca"
-          }
-        })}</script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "TermsOfService",
+            name: "Seismic AI Terms of Use",
+            url: "https://seismicai.ca/terms-of-use",
+            dateModified: "2025-10-30",
+            publisher: {
+              "@type": "Organization",
+              name: "Seismic AI",
+              url: "https://seismicai.ca",
+            },
+          })}
+        </script>
       </Helmet>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -224,7 +238,7 @@ const TermsOfUsePage: React.FC = () => {
             Terms of <span className="text-[#00E5FF]">Use</span>
           </h1>
           <p className="text-gray-400 font-inter text-lg">
-            Last Updated: October 30, 2025
+            Last updated: October 30, 2025
           </p>
         </motion.div>
 
@@ -292,15 +306,27 @@ const TermsOfUsePage: React.FC = () => {
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    By accessing or using Seismic AI, you represent that:
+                    By accessing Seismic AI or using any feature of the
+                    Services, you confirm that:
                   </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>You are at least 18 years of age or the legal age of majority in your jurisdiction.</li>
-                    <li>You are authorized to bind yourself or your organization to these Terms.</li>
-                    <li>You have reviewed and accept our Privacy Policy, which forms an integral part of these Terms.</li>
+                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
+                    <li>
+                      You are of legal age and capacity to form a binding
+                      contract.
+                    </li>
+                    <li>
+                      You have authority to act on behalf of your organization
+                      (if applicable).
+                    </li>
+                    <li>
+                      You agree to comply with these Terms and any applicable
+                      laws and regulations.
+                    </li>
                   </ul>
-                  <p className="text-gray-300 font-inter">
-                    We reserve the right to update or revise these Terms at any time. Changes will be effective immediately upon posting. Your continued use after changes are published constitutes acceptance of the updated Terms.
+                  <p className="text-gray-300 font-inter mt-4">
+                    Seismic AI reserves the right to update or modify these
+                    Terms at any time. Continued use of the Services after
+                    changes constitutes acceptance of the revised Terms.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
@@ -318,79 +344,119 @@ const TermsOfUsePage: React.FC = () => {
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    Seismic AI provides an AI-driven LiDAR and seismic data analytics platform designed to assist organizations in the oil & gas, mining, and geospatial industries. Our Services may include:
+                    Seismic AI provides AI-powered analytics and LiDAR data
+                    processing tools to assist the oil and gas, mining, and
+                    environmental sectors. Our Services include:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>Cloud-hosted SaaS dashboards for seismic and terrain data interpretation.</li>
-                    <li>APIs and webhooks for data ingestion, processing, and visualization.</li>
-                    <li>Machine learning and LiDAR mapping algorithms.</li>
-                    <li>Custom integrations, training datasets, or consulting engagements.</li>
+                    <li>
+                      A SaaS dashboard and API for LiDAR and seismic data
+                      analysis.
+                    </li>
+                    <li>Data visualization and reporting.</li>
+                    <li>
+                      Integration with partner drone systems and remote sensing
+                      technologies.
+                    </li>
                   </ul>
-                  <p className="text-gray-300 font-inter mb-4">
-                    The Services are intended for commercial and professional use. We continually refine our products and may add, suspend, or modify features at our discretion.
-                  </p>
                   <p className="text-gray-300 font-inter">
-                    We make no guarantee that any feature, dataset, or capability will remain available in perpetuity.
+                    We continuously evolve and may modify, suspend, or
+                    discontinue certain features or modules without prior
+                    notice.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 3: Account Registration and Security */}
+              {/* Section 3: User Responsibilities */}
+              <section id="responsibilities" className="mb-12">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
+                    <Users className="w-6 h-6 text-[#00E5FF]" />
+                  </div>
+                  <h2 className="text-3xl font-bold text-white font-space">
+                    3. User Responsibilities
+                  </h2>
+                </div>
+                <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
+                  <div className="mb-6">
+                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">
+                      You agree to:
+                    </h3>
+                    <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
+                      <li>
+                        Provide accurate registration and billing information.
+                      </li>
+                      <li>
+                        Maintain confidentiality of your account credentials.
+                      </li>
+                      <li>
+                        Use the Services only for lawful and authorized
+                        purposes.
+                      </li>
+                      <li>
+                        Respect intellectual property and data-security
+                        obligations.
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">
+                      You must not:
+                    </h3>
+                    <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
+                      <li>
+                        Copy, modify, reverse engineer, or redistribute the
+                        platform's source code.
+                      </li>
+                      <li>
+                        Upload malware, unauthorized datasets, or harmful
+                        content.
+                      </li>
+                      <li>
+                        Interfere with servers, APIs, or network performance.
+                      </li>
+                      <li>
+                        Misrepresent your affiliation or resell access to the
+                        Services without authorization.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
+              </section>
+
+              {/* Section 4: Account Registration and Security */}
               <section id="account" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Shield className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    3. Account Registration and Security
+                    4. Account Registration and Security
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    To access restricted areas of the platform, you must create a Seismic AI account. You agree to:
+                    To use Seismic AI's secure dashboards or APIs, you must
+                    create an account. You are responsible for:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>Provide true, current, and complete registration details.</li>
-                    <li>Maintain the confidentiality of your credentials.</li>
-                    <li>Immediately notify <a href="mailto:support@seismicai.ca" className="text-[#00E5FF] hover:underline">support@seismicai.ca</a> of any unauthorized access or suspected breach.</li>
-                    <li>Be solely responsible for all activities occurring under your account.</li>
-                  </ul>
-                  <p className="text-gray-300 font-inter mb-4">
-                    We reserve the right to suspend or terminate accounts for security reasons, inactivity, or violation of these Terms.
-                  </p>
-                  <p className="text-gray-300 font-inter">
-                    You may not use another user's account or share access credentials without prior written consent.
-                  </p>
-                </div>
-                <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
-              </section>
-
-              {/* Section 4: User Conduct and Acceptable Use */}
-              <section id="conduct" className="mb-12">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
-                    <Users className="w-6 h-6 text-[#00E5FF]" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white font-space">
-                    4. User Conduct and Acceptable Use
-                  </h2>
-                </div>
-                <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <p className="text-gray-300 font-inter mb-4">
-                    You agree to use the Services responsibly and only for lawful purposes. You shall not:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>Upload or process any data that infringes on third-party rights, privacy, or confidentiality.</li>
-                    <li>Reverse-engineer, decompile, disassemble, or attempt to extract source code or algorithms.</li>
-                    <li>Introduce malware, viruses, bots, or scripts designed to harm or overload systems.</li>
-                    <li>Circumvent authentication mechanisms, rate limits, or access controls.</li>
-                    <li>Use Seismic AI outputs to build or train competing products or derivative AI models.</li>
-                    <li>Misrepresent your identity, affiliation, or authorization.</li>
-                    <li>Exploit the Services for unlawful surveillance, discrimination, or unethical activities.</li>
+                    <li>Keeping your credentials confidential.</li>
+                    <li>
+                      Notifying us immediately at{" "}
+                      <a
+                        href="mailto:support@seismicai.ca"
+                        className="text-[#00E5FF] hover:underline"
+                      >
+                        support@seismicai.ca
+                      </a>{" "}
+                      if you suspect unauthorized access.
+                    </li>
                   </ul>
                   <p className="text-gray-300 font-inter">
-                    Violation of these rules may result in account suspension, termination, and potential legal action.
+                    We reserve the right to suspend or terminate accounts that
+                    breach these Terms.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
@@ -407,22 +473,16 @@ const TermsOfUsePage: React.FC = () => {
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <p className="text-gray-300 font-inter mb-4">
-                    All intellectual property rights in and to the Services — including software code, algorithms, models, APIs, documentation, UI/UX design, content, data visualizations, trademarks, and branding — are owned or licensed by Turbo AI Technologies Inc. or its affiliates.
-                  </p>
-                  <p className="text-gray-300 font-inter mb-4">
-                    You retain ownership of your input data (e.g., LiDAR uploads, field data), while Seismic AI retains ownership of:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>The platform and its algorithms,</li>
-                    <li>The analytics outputs, processed visualizations, and derived models, and</li>
-                    <li>All improvements, feedback, or derivative works made through use of the Services.</li>
-                  </ul>
-                  <p className="text-gray-300 font-inter mb-4">
-                    Feedback or suggestions you provide may be freely used by Seismic AI without obligation.
-                  </p>
                   <p className="text-gray-300 font-inter">
-                    Nothing in these Terms grants you ownership or license rights beyond those expressly stated.
+                    All Seismic AI content—including software, algorithms,
+                    visual designs, datasets, documentation, and
+                    trademarks—remains the property of{" "}
+                    <strong className="text-white">
+                      Turbo AI Technologies Inc.
+                    </strong>{" "}
+                    and its licensors. Your use of the Services does not grant
+                    ownership or IP rights beyond the limited license described
+                    below.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
@@ -440,330 +500,265 @@ const TermsOfUsePage: React.FC = () => {
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    Subject to compliance with these Terms, Seismic AI grants you a{" "}
-                    <strong className="text-[#00E5FF]">limited, non-exclusive, non-transferable, revocable license</strong> to 
-                    access and use the Services solely for your internal business operations.
+                    Subject to compliance with these Terms, Seismic AI grants
+                    you a{" "}
+                    <strong className="text-[#00E5FF]">
+                      non-exclusive, non-transferable, revocable license
+                    </strong>{" "}
+                    to access and use the Services solely for your
+                    organization's internal business purposes.
                   </p>
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">You may:</h3>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">
+                      You may not:
+                    </h3>
                     <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
-                      <li>Upload and process authorized data within project limits.</li>
-                      <li>Use dashboard analytics and export reports for organizational purposes.</li>
-                      <li>Integrate Seismic AI APIs as permitted by documentation.</li>
+                      <li>Sub-license or resell any aspect of the Services.</li>
+                      <li>
+                        Use Seismic AI outputs to build competing products.
+                      </li>
+                      <li>Circumvent security or usage restrictions.</li>
                     </ul>
                   </div>
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">You may not:</h3>
-                    <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
-                      <li>Share or resell Services to third parties.</li>
-                      <li>Use the platform for real-time mission-critical systems without redundancy.</li>
-                      <li>Derive or redistribute datasets, maps, or AI outputs without permission.</li>
-                      <li>Use Seismic AI for defense, weapons, or surveillance purposes prohibited by international law.</li>
-                    </ul>
-                  </div>
-                  <p className="text-gray-300 font-inter">
-                    All licenses automatically terminate upon breach of these Terms or service termination.
-                  </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 7: Fees, Billing, and Payment Terms */}
+              {/* Section 7: Payment, Billing, and Renewals */}
               <section id="payment" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <CreditCard className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    7. Fees, Billing, and Payment Terms
+                    7. Payment, Billing, and Renewals
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    Some Services are offered on a subscription or project basis. By purchasing or subscribing:
+                    Paid subscriptions or project engagements are billed as per
+                    the terms of individual agreements or invoices. You agree to
+                    pay all applicable fees, taxes, and surcharges.
                   </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>You agree to pay all applicable fees, taxes, and charges as per invoice or contract.</li>
-                    <li>Payments are processed through secure third-party payment gateways.</li>
-                    <li>Fees are non-refundable except where required by law or a written contract.</li>
-                    <li>Failure to pay may result in account suspension or data access revocation.</li>
-                  </ul>
                   <p className="text-gray-300 font-inter mb-4">
-                    Seismic AI reserves the right to revise pricing with notice for recurring subscriptions.
+                    Failure to pay may result in suspension or termination of
+                    access.
                   </p>
                   <p className="text-gray-300 font-inter">
-                    Invoices shall be deemed accepted unless disputed in writing within 7 days of issuance.
+                    All charges are non-refundable except as required by law.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 8: Data Ownership and Confidentiality */}
-              <section id="data-ownership" className="mb-12">
+              {/* Section 8: Confidentiality and Data Ownership */}
+              <section id="confidentiality" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Lock className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    8. Data Ownership and Confidentiality
-                  </h2>
-                </div>
-                <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">a) Data Ownership</h3>
-                    <p className="text-gray-300 font-inter mb-4">
-                      You retain ownership of your raw LiDAR, seismic, or operational datasets ("Customer Data"). By using our Services, you grant Seismic AI a limited license to:
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                      <li>Host, process, and analyze such data for providing the Services.</li>
-                      <li>Generate derivative analytical outputs or performance metrics.</li>
-                    </ul>
-                    <p className="text-gray-300 font-inter">
-                      We may use anonymized or aggregated data for research, model training, and performance benchmarking without identifying clients or proprietary content.
-                    </p>
-                  </div>
-                  <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">b) Confidentiality</h3>
-                    <p className="text-gray-300 font-inter">
-                      Both parties agree to protect each other's confidential information and not to disclose it to third parties except as required by law or with consent. Confidential information includes technical, commercial, and financial data not publicly available.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">c) Compliance</h3>
-                    <p className="text-gray-300 font-inter">
-                      All data handling and processing are governed by our Privacy Policy, which aligns with PIPEDA (Canada), GDPR (EU), and other applicable frameworks.
-                    </p>
-                  </div>
-                </div>
-                <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
-              </section>
-
-              {/* Section 9: Service Availability and Modifications */}
-              <section id="availability" className="mb-12">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
-                    <Globe className="w-6 h-6 text-[#00E5FF]" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white font-space">
-                    9. Service Availability and Modifications
+                    8. Confidentiality and Data Ownership
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    Seismic AI strives to ensure high uptime and reliability but does not guarantee uninterrupted or error-free operation. From time to time, we may perform maintenance, upgrades, or security patches that temporarily limit access.
-                  </p>
-                  <p className="text-gray-300 font-inter mb-4">
-                    We will use reasonable efforts to notify users of major outages in advance.
+                    Each party shall maintain confidentiality of proprietary
+                    information. Seismic AI may process operational or
+                    geospatial data for analytics purposes only as defined in
+                    the Privacy Policy.
                   </p>
                   <p className="text-gray-300 font-inter">
-                    We may also modify or discontinue specific features or datasets without liability if necessary for technical, legal, or business reasons.
+                    Clients retain ownership of their raw data; Seismic AI
+                    retains ownership of derived or anonymized analytical
+                    outputs, models, and aggregated insights used for system
+                    improvement.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 10: Warranties and Disclaimers */}
-              <section id="warranties" className="mb-12">
+              {/* Section 9: Disclaimers */}
+              <section id="disclaimers" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <AlertTriangle className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    10. Warranties and Disclaimers
+                    9. Disclaimers
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    To the fullest extent permitted by law:
+                    Seismic AI is provided{" "}
+                    <strong className="text-[#00E5FF]">"as is"</strong> and{" "}
+                    <strong className="text-[#00E5FF]">"as available"</strong>{" "}
+                    without warranty of any kind, express or implied.
                   </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>The Services are provided <strong className="text-[#00E5FF]">"as is"</strong> and <strong className="text-[#00E5FF]">"as available,"</strong> without any warranty, express or implied.</li>
-                    <li>We make no representation regarding the accuracy, completeness, or reliability of any AI-generated output or data analysis.</li>
-                    <li>You acknowledge that results from LiDAR and AI analytics may vary based on input quality, field conditions, and environmental factors.</li>
-                    <li>Seismic AI disclaims all warranties of merchantability, fitness for a particular purpose, non-infringement, or data accuracy.</li>
-                  </ul>
+                  <p className="text-gray-300 font-inter mb-4">
+                    We do not guarantee uninterrupted service, error-free
+                    operation, or accuracy of AI-generated results.
+                  </p>
                   <p className="text-gray-300 font-inter">
-                    You assume full responsibility for verifying any Seismic AI results before using them for operational or safety decisions.
+                    Users are responsible for verifying outcomes before making
+                    business or safety decisions.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 11: Limitation of Liability */}
+              {/* Section 10: Limitation of Liability */}
               <section id="liability" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Scale className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    11. Limitation of Liability
+                    10. Limitation of Liability
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    To the maximum extent permitted by law, Seismic AI and its affiliates shall not be liable for:
+                    To the fullest extent permitted by law, Seismic AI, Turbo AI
+                    Technologies, and affiliates shall not be liable for:
                   </p>
                   <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>Any indirect, incidental, consequential, or punitive damages.</li>
-                    <li>Loss of profits, business, data, or goodwill.</li>
-                    <li>Damages arising from unauthorized access, service interruptions, or third-party dependencies.</li>
+                    <li>Indirect, incidental, or consequential damages.</li>
+                    <li>Loss of profits, data, or business interruption.</li>
+                    <li>
+                      Errors or delays resulting from user misuse, external
+                      systems, or third-party dependencies.
+                    </li>
                   </ul>
-                  <p className="text-gray-300 font-inter mb-4">
-                    In all cases, our aggregate liability shall not exceed the total fees paid by you to Seismic AI in the twelve (12) months preceding the event giving rise to the claim.
-                  </p>
                   <p className="text-gray-300 font-inter">
-                    Some jurisdictions do not allow limitation of liability for certain damages, so these limitations may not apply to you.
+                    Our total liability shall not exceed the amount paid by you
+                    to Seismic AI in the preceding twelve (12) months.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 12: Indemnification */}
+              {/* Section 11: Indemnification */}
               <section id="indemnification" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Shield className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    12. Indemnification
+                    11. Indemnification
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <p className="text-gray-300 font-inter mb-4">
-                    You agree to indemnify, defend, and hold harmless Seismic AI, its officers, directors, employees, contractors, and affiliates from any claims, damages, or expenses (including legal fees) arising from:
-                  </p>
-                  <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4 mb-4">
-                    <li>Your use or misuse of the Services;</li>
-                    <li>Your violation of these Terms or any applicable law;</li>
-                    <li>Your infringement of intellectual property or data rights of any third party.</li>
-                  </ul>
                   <p className="text-gray-300 font-inter">
-                    We reserve the right to assume exclusive defense and control of any matter otherwise subject to indemnification by you, in which case you agree to cooperate with us in good faith.
+                    You agree to indemnify and hold harmless Seismic AI, its
+                    directors, officers, employees, and partners from any claim,
+                    damage, loss, or expense (including legal fees) arising from
+                    your use of the Services, violation of these Terms, or
+                    infringement of any rights of a third party.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 13: Term and Termination */}
+              {/* Section 12: Termination */}
               <section id="termination" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Clock className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    13. Term and Termination
+                    12. Termination
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <p className="text-gray-300 font-inter mb-4">
-                    These Terms remain effective until terminated by either party. You may terminate your account at any time by notifying <a href="mailto:support@seismicai.ca" className="text-[#00E5FF] hover:underline">support@seismicai.ca</a>.
-                  </p>
                   <div className="mb-6">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">We may suspend or terminate your account, access, or license if:</h3>
+                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">
+                      We may suspend or terminate access to your account without
+                      notice if:
+                    </h3>
                     <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
-                      <li>You breach these Terms or violate applicable laws;</li>
-                      <li>You misuse or attempt to compromise system integrity;</li>
-                      <li>We are required to do so by law, court order, or regulatory directive.</li>
+                      <li>You breach these Terms or misuse the Services.</li>
+                      <li>Required by law or security necessity.</li>
                     </ul>
                   </div>
-                  <div className="mb-4">
-                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">Upon termination:</h3>
+                  <div>
+                    <h3 className="text-xl font-semibold text-[#00E5FF] mb-3 font-space">
+                      Upon termination:
+                    </h3>
                     <ul className="list-disc list-inside space-y-2 text-gray-300 font-inter ml-4">
-                      <li>All rights and licenses granted to you shall cease.</li>
-                      <li>You must delete all Seismic AI materials and cease use of the Services.</li>
-                      <li>Outstanding payments remain due immediately.</li>
+                      <li>All licenses granted herein shall cease.</li>
+                      <li>
+                        You must delete all downloaded data, reports, or
+                        derivative materials.
+                      </li>
+                      <li>Outstanding payments remain due.</li>
                     </ul>
                   </div>
-                  <p className="text-gray-300 font-inter">
-                    Termination shall not affect rights or obligations that accrued prior to termination.
-                  </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 14: Export Control and Compliance */}
-              <section id="export-control" className="mb-12">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
-                    <Globe className="w-6 h-6 text-[#00E5FF]" />
-                  </div>
-                  <h2 className="text-3xl font-bold text-white font-space">
-                    14. Export Control and Compliance
-                  </h2>
-                </div>
-                <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
-                  <p className="text-gray-300 font-inter mb-4">
-                    You agree not to use, export, or re-export the Services in violation of any applicable export laws, including those of Canada, the United States, or the European Union.
-                  </p>
-                  <p className="text-gray-300 font-inter">
-                    The Services shall not be used in jurisdictions or by individuals subject to sanctions or trade restrictions.
-                  </p>
-                </div>
-                <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
-              </section>
-
-              {/* Section 15: Governing Law and Dispute Resolution */}
+              {/* Section 13: Governing Law and Jurisdiction */}
               <section id="governing-law" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Gavel className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    15. Governing Law and Dispute Resolution
+                    13. Governing Law and Jurisdiction
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    These Terms and any related disputes are governed by the laws of{" "}
-                    <strong className="text-[#00E5FF]">Alberta, Canada</strong>, without regard to its conflict-of-laws principles.
-                  </p>
-                  <p className="text-gray-300 font-inter mb-4">
-                    Parties agree to submit exclusively to the courts of Calgary, Alberta, for any claim arising under these Terms.
+                    These Terms are governed by and construed under the laws of{" "}
+                    <strong className="text-[#00E5FF]">Alberta, Canada</strong>,
+                    without regard to conflicts of law principles.
                   </p>
                   <p className="text-gray-300 font-inter">
-                    We encourage resolving disputes amicably before pursuing legal action.
+                    Any disputes shall be subject to the exclusive jurisdiction
+                    of the courts in Calgary, Alberta.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 16: Changes to the Terms */}
+              {/* Section 14: Changes to the Terms */}
               <section id="changes" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <FileText className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    16. Changes to the Terms
+                    14. Changes to the Terms
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-4">
-                    We may revise these Terms periodically to reflect service updates or regulatory changes. Revised Terms will be posted on this page with an updated "Last Updated" date.
-                  </p>
-                  <p className="text-gray-300 font-inter mb-4">
-                    Substantial changes may be communicated via email or platform notification.
+                    We may update these Terms periodically to reflect new
+                    features, policies, or regulatory changes. Revisions will be
+                    posted on this page with a new "Last Updated" date.
                   </p>
                   <p className="text-gray-300 font-inter">
-                    Continued use of the Services after such changes constitutes acceptance of the new Terms.
+                    Your continued use constitutes acceptance of the updated
+                    Terms.
                   </p>
                 </div>
                 <div className="h-px bg-gradient-to-r from-transparent via-[#00E5FF]/30 to-transparent mt-8"></div>
               </section>
 
-              {/* Section 17: Contact Information */}
+              {/* Section 15: Contact Us */}
               <section id="contact" className="mb-12">
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="p-2 bg-[#00E5FF]/10 rounded-lg">
                     <Mail className="w-6 h-6 text-[#00E5FF]" />
                   </div>
                   <h2 className="text-3xl font-bold text-white font-space">
-                    17. Contact Information
+                    15. Contact Us
                   </h2>
                 </div>
                 <div className="bg-white/[0.02] border border-white/[0.08] rounded-lg p-6">
                   <p className="text-gray-300 font-inter mb-6">
-                    If you have any questions, feedback, or legal correspondence related to these Terms, please contact:
+                    For questions regarding these Terms or business inquiries:
                   </p>
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
@@ -771,8 +766,9 @@ const TermsOfUsePage: React.FC = () => {
                         <Globe className="w-5 h-5 text-[#00E5FF]" />
                       </div>
                       <div>
-                        <p className="text-white font-semibold font-space">Seismic AI (Turbo AI Technologies Inc.)</p>
-                        <p className="text-gray-400 font-inter text-sm">Attn: Legal & Compliance Department</p>
+                        <p className="text-white font-semibold font-space">
+                          Seismic AI (Turbo AI Technologies Inc.)
+                        </p>
                       </div>
                     </div>
                     <div className="flex items-center space-x-3">
@@ -780,7 +776,10 @@ const TermsOfUsePage: React.FC = () => {
                         <Mail className="w-5 h-5 text-[#00E5FF]" />
                       </div>
                       <div>
-                        <a href="mailto:support@seismicai.ca" className="text-[#00E5FF] hover:underline font-inter">
+                        <a
+                          href="mailto:support@seismicai.ca"
+                          className="text-[#00E5FF] hover:underline font-inter"
+                        >
                           support@seismicai.ca
                         </a>
                       </div>
@@ -790,7 +789,9 @@ const TermsOfUsePage: React.FC = () => {
                         <MapPin className="w-5 h-5 text-[#00E5FF]" />
                       </div>
                       <div>
-                        <p className="text-gray-300 font-inter">Calgary, Alberta, Canada</p>
+                        <p className="text-gray-300 font-inter">
+                          Calgary, Alberta, Canada
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -823,7 +824,9 @@ const TermsOfUsePage: React.FC = () => {
             >
               <div className="flex items-center space-x-3">
                 <FileText className="w-5 h-5 text-[#00E5FF]" />
-                <span className="text-white font-semibold font-space">Table of Contents</span>
+                <span className="text-white font-semibold font-space">
+                  Table of Contents
+                </span>
               </div>
               {expandedSections.has("mobile-toc") ? (
                 <ChevronUp className="w-5 h-5 text-[#00E5FF]" />

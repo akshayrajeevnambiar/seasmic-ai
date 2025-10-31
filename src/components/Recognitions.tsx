@@ -49,7 +49,7 @@ const Recognitions = () => {
   ];
 
   return (
-    <section className="py-20 bg-design-black">
+    <section id="recognitions" className="py-20 bg-design-black">
       <div className="max-w-screen-xl mx-auto px-6">
         {/* Section Header */}
         <motion.div

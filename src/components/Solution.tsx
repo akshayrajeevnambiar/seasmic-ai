@@ -181,9 +181,14 @@ const Solution = () => {
         viewport={{ once: true }}
       >
         <p className="text-gray-300 font-inter text-sm leading-relaxed text-center">
-          <strong className="text-orange-400">AI Output Disclaimer:</strong> All AI-generated predictions and analysis are for informational purposes only. 
-          Professional geological validation is required before making operational decisions. 
-          <a href="#ethics-ai" className="text-neon hover:text-white transition-colors ml-1">
+          <strong className="text-orange-400">AI Output Disclaimer:</strong> All
+          AI-generated predictions and analysis are for informational purposes
+          only. Professional geological validation is required before making
+          operational decisions.
+          <a
+            href="#ethics-ai"
+            className="text-neon hover:text-white transition-colors ml-1"
+          >
             Learn more about our AI ethics →
           </a>
         </p>

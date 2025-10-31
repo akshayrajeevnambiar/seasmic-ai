@@ -1,6 +1,6 @@
-import { motion, AnimatePresence } from 'framer-motion';
-import { useEffect, useState } from 'react';
-import seismicLogo from '../assets/seismica-logo.png';
+import { motion, AnimatePresence } from "framer-motion";
+import { useEffect, useState } from "react";
+import seismicLogo from "../assets/seismica-logo.png";
 
 interface LoadingScreenProps {
   onComplete: () => void;
@@ -18,11 +18,11 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
     const updateProgress = () => {
       const elapsed = Date.now() - startTime;
       const newProgress = Math.min((elapsed / duration) * 100, 100);
-      
+
       // Add slight randomness to make it feel more realistic
       const jitter = Math.random() * 2 - 1; // -1 to 1
       const adjustedProgress = Math.max(0, Math.min(100, newProgress + jitter));
-      
+
       setProgress(adjustedProgress);
 
       if (elapsed < duration) {
@@ -87,7 +87,11 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               className="w-80 md:w-96"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               {/* Progress bar background */}
               <div className="relative h-1 bg-white/[0.08] rounded-full overflow-hidden">
@@ -97,7 +101,7 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
                   style={{ width: `${progress}%` }}
                   transition={{ duration: 0.1, ease: "easeOut" }}
                 />
-                
+
                 {/* Glow effect */}
                 <motion.div
                   className="absolute left-0 top-0 h-full bg-gradient-to-r from-neon/50 to-accent/50 rounded-full blur-sm"
@@ -137,7 +141,11 @@ const LoadingScreen = ({ onComplete }: LoadingScreenProps) => {
               className="flex space-x-1 mt-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+              transition={{
+                duration: 0.8,
+                delay: 0.4,
+                ease: [0.22, 1, 0.36, 1],
+              }}
             >
               {[0, 1, 2].map((i) => (
                 <motion.div

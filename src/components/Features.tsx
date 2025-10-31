@@ -1,38 +1,43 @@
-import { motion } from 'framer-motion';
-import { Target, TrendingDown, Clock, Shield, Users } from 'lucide-react';
-import { animations } from '../constants/design';
+import { motion } from "framer-motion";
+import { Target, TrendingDown, Clock, Shield, Users } from "lucide-react";
+import { animations } from "../constants/design";
 
 const Features = () => {
   const features = [
     {
       icon: Target,
-      title: 'Precision Mapping',
-      description: 'LiDAR technology provides millimeter-accurate subsurface mapping',
-      stats: '99.8% accuracy',
+      title: "Precision Mapping",
+      description:
+        "LiDAR technology provides millimeter-accurate subsurface mapping",
+      stats: "99.8% accuracy",
     },
     {
       icon: TrendingDown,
-      title: 'Cost Reduction',
-      description: 'Dramatically reduce exploration costs compared to traditional methods',
-      stats: 'Save $3.5M annually',
+      title: "Cost Reduction",
+      description:
+        "Dramatically reduce exploration costs compared to traditional methods",
+      stats: "Save $3.5M annually",
     },
     {
       icon: Clock,
-      title: 'Real-Time Analysis',
-      description: 'Instant data processing and analysis for immediate decision making',
-      stats: 'Results in hours',
+      title: "Real-Time Analysis",
+      description:
+        "Instant data processing and analysis for immediate decision making",
+      stats: "Results in hours",
     },
     {
       icon: Shield,
-      title: 'ESG Compliance',
-      description: 'Environmentally responsible exploration with zero ground disturbance',
-      stats: '100% sustainable',
+      title: "ESG Compliance",
+      description:
+        "Environmentally responsible exploration with zero ground disturbance",
+      stats: "100% sustainable",
     },
     {
       icon: Users,
-      title: 'Workforce Training',
-      description: 'Empowering local communities with cutting-edge technology skills',
-      stats: '50+ trained operators',
+      title: "Workforce Training",
+      description:
+        "Empowering local communities with cutting-edge technology skills",
+      stats: "50+ trained operators",
     },
   ];
 
@@ -43,10 +48,9 @@ const Features = () => {
           className="text-4xl md:text-6xl font-bold mb-6 text-white font-space tracking-tighter"
           {...animations.minimal}
         >
-          Revolutionary{' '}
-          <span className="text-neon">Features</span>
+          Revolutionary <span className="text-neon">Features</span>
         </motion.h2>
-        
+
         <motion.p
           className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed font-inter"
           initial={{ opacity: 0, y: 20 }}
@@ -54,7 +58,8 @@ const Features = () => {
           transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           viewport={{ once: true }}
         >
-          Experience the future of seismic exploration with unparalleled accuracy, efficiency, and sustainability.
+          Experience the future of seismic exploration with unparalleled
+          accuracy, efficiency, and sustainability.
         </motion.p>
       </div>
 
@@ -68,28 +73,28 @@ const Features = () => {
             className="glass-panel neon-border-t p-6 group"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ 
-              duration: 0.7, 
+            transition={{
+              duration: 0.7,
               delay: index * 0.1,
-              ease: [0.22, 1, 0.36, 1]
+              ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
           >
             <div className="mb-4">
-              <feature.icon 
-                size={24} 
-                className="text-muted group-hover:text-neon transition-colors duration-300" 
+              <feature.icon
+                size={24}
+                className="text-muted group-hover:text-neon transition-colors duration-300"
               />
             </div>
-            
+
             <h3 className="text-lg font-semibold text-white mb-2 font-space">
               {feature.title}
             </h3>
-            
+
             <p className="text-sm text-muted mb-4 leading-relaxed font-inter">
               {feature.description}
             </p>
-            
+
             <div className="border-t border-white/[0.08] pt-3">
               <span className="text-neon font-medium text-sm">
                 {feature.stats}
@@ -124,8 +129,9 @@ const Features = () => {
           transition={{ duration: 0.6, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <strong className="text-orange-400">Note:</strong> AI-powered features provide analytical assistance. 
-          All outputs require validation by qualified professionals before operational use.
+          <strong className="text-orange-400">Note:</strong> AI-powered features
+          provide analytical assistance. All outputs require validation by
+          qualified professionals before operational use.
         </motion.p>
       </motion.div>
     </section>

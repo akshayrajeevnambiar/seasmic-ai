@@ -1,10 +1,13 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 import { animations } from "../constants/design";
 import seismicaLogo from "../assets/seismica-logo.png";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const services = [
     "Seismic Surveying",
     "LiDAR Drone Technology",
@@ -16,7 +19,31 @@ const Footer = () => {
     "Geophysical Intelligence",
   ];
 
-  const company = ["About", "Technology", "Our Impact", "Solutions"];
+  const company = [
+    { name: "Our Team", link: "#team" },
+    { name: "Advanced Technology", link: "#technology" },
+    { name: "Current Recognitions", link: "#recognitions" },
+    { name: "Seismic Intelligence", link: "#solution" },
+  ];
+
+  const handleNavigation = (link: string) => {
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate to homepage first, then scroll
+      navigate('/');
+      setTimeout(() => {
+        const element = document.querySelector(link);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
+    } else {
+      // If on homepage, just scroll to section
+      const element = document.querySelector(link);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="bg-black border-t border-white/[0.08]">
@@ -85,30 +112,34 @@ const Footer = () => {
               <ul className="space-y-3 mb-6">
                 {company.map((item, index) => (
                   <li key={index}>
-                    <a
-                      href={`#${item.toLowerCase()}`}
-                      className="text-muted hover:text-neon transition-colors duration-300 font-inter"
+                    <button
+                      onClick={() => handleNavigation(item.link)}
+                      className="text-muted hover:text-neon transition-colors duration-300 font-inter text-left"
                     >
-                      {item}
-                    </a>
+                      {item.name}
+                    </button>
                   </li>
                 ))}
               </ul>
 
               {/* Legal & Compliance Links */}
               <div className="space-y-3 mb-8">
-                <Link
-                  to="/privacy-policy"
+                <a
+                  href="/privacy-policy"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
                 >
                   Privacy Policy
-                </Link>
-                <Link
-                  to="/terms-of-use"
+                </a>
+                <a
+                  href="/terms-of-use"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
                 >
                   Terms of Use
-                </Link>
+                </a>
                 <a
                   href="#ethics-ai"
                   className="text-neon hover:text-white transition-colors duration-300 font-inter font-medium block"
