@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 import { animations } from "../constants/design";
 import seismicaLogo from "../assets/seismica-logo.png";
 
@@ -96,18 +97,18 @@ const Footer = () => {
 
               {/* Legal & Compliance Links */}
               <div className="space-y-3 mb-8">
-                <a
-                  href="#privacy-policy"
+                <Link
+                  to="/privacy-policy"
                   className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
                 >
                   Privacy Policy
-                </a>
-                <a
-                  href="#terms-of-use"
+                </Link>
+                <Link
+                  to="/terms-of-use"
                   className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
                 >
                   Terms of Use
-                </a>
+                </Link>
                 <a
                   href="#ethics-ai"
                   className="text-neon hover:text-white transition-colors duration-300 font-inter font-medium block"
