@@ -141,7 +141,9 @@ const Footer = () => {
                   Terms of Use
                 </a>
                 <a
-                  href="#ethics-ai"
+                  href="/ethics-ai-transparency"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-neon hover:text-white transition-colors duration-300 font-inter font-medium block"
                 >
                   Ethics & AI Transparency

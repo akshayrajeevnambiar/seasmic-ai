@@ -16,6 +16,7 @@ import { usePerformanceMonitoring } from "./hooks/usePerformance";
 const HomePage = lazy(() => import("./pages/HomePage"));
 const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfUsePage = lazy(() => import("./pages/TermsOfUsePage"));
+const EthicsAIPage = lazy(() => import("./pages/EthicsAIPage"));
 
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
@@ -29,7 +30,7 @@ const PageLoader = () => (
 
 function AppContent() {
   const location = useLocation();
-  const hideNavbarRoutes = ["/privacy-policy", "/terms-of-use"];
+  const hideNavbarRoutes = ["/privacy-policy", "/terms-of-use", "/ethics-ai-transparency"];
   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
 
   return (
@@ -40,6 +41,7 @@ function AppContent() {
           <Route path="/" element={<HomePage />} />
           <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
+          <Route path="/ethics-ai-transparency" element={<EthicsAIPage />} />
         </Routes>
       </Suspense>
       <Footer />
@@ -59,7 +61,8 @@ function App() {
     const hasSeenLoading = sessionStorage.getItem("seismic-loading-seen");
     const isLegalPage =
       window.location.pathname === "/privacy-policy" ||
-      window.location.pathname === "/terms-of-use";
+      window.location.pathname === "/terms-of-use" ||
+      window.location.pathname === "/ethics-ai-transparency";
 
     // Skip loading screen for legal pages or if already seen
     if (hasSeenLoading || isLegalPage) {

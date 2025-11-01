@@ -13,7 +13,6 @@ const ROI = lazy(() => import("../components/ROI.tsx"));
 const Team = lazy(() => import("../components/Team.tsx"));
 const Recognitions = lazy(() => import("../components/Recognitions.tsx"));
 const Contact = lazy(() => import("../components/Contact.tsx"));
-const EthicsAI = lazy(() => import("../components/EthicsAI.tsx"));
 
 // Lightweight loading component for sections
 const SectionLoader = () => (
@@ -49,9 +48,6 @@ const HomePage: React.FC = () => {
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <Recognitions />
-      </Suspense>
-      <Suspense fallback={<SectionLoader />}>
-        <EthicsAI />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <Contact />
