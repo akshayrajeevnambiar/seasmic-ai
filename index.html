@@ -1,9 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" itemscope itemtype="https://schema.org/Organization">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Seismic AI - AI-Powered LiDAR Drone Technology for Energy Exploration
+    </title>
+    <meta
+      name="title"
+      content="Seismic AI - AI-Powered LiDAR Drone Technology for Energy Exploration"
+    />
+    <meta
+      name="description"
+      content="Revolutionary AI-powered LiDAR drone platform transforming oil & gas exploration with real-time seismic intelligence, sustainable mining solutions, and advanced geophysical analysis."
+    />
+    <meta
+      name="keywords"
+      content="AI seismic analysis, LiDAR drone technology, energy exploration, oil and gas exploration, mining solutions, geophysics, machine learning, sustainable mining, real-time seismic data, geological surveying"
+    />
+    <meta name="author" content="Seismic AI" />
+    <meta
+      name="robots"
+      content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+    />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="distribution" content="global" />
+    <meta name="rating" content="general" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://seismic-ai.vercel.app/" />
+
+    <!-- Hreflang for international SEO -->
+    <link rel="alternate" href="https://seismic-ai.vercel.app/" hreflang="en" />
+    <link
+      rel="alternate"
+      href="https://seismic-ai.vercel.app/"
+      hreflang="x-default"
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://seismic-ai.vercel.app/" />
+    <meta
+      property="og:title"
+      content="Seismic AI - AI-Powered LiDAR Drone Technology for Energy Exploration"
+    />
+    <meta
+      property="og:description"
+      content="Revolutionary AI-powered LiDAR drone platform transforming oil & gas exploration with real-time seismic intelligence, sustainable mining solutions, and advanced geophysical analysis."
+    />
+    <meta
+      property="og:image"
+      content="https://seismic-ai.vercel.app/og-image.jpg"
+    />
+    <meta
+      property="og:image:alt"
+      content="Seismic AI LiDAR drone technology for energy exploration"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Seismic AI" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SeismicAI" />
+    <meta name="twitter:creator" content="@SeismicAI" />
+    <meta name="twitter:url" content="https://seismic-ai.vercel.app/" />
+    <meta
+      name="twitter:title"
+      content="Seismic AI - AI-Powered LiDAR Drone Technology"
+    />
+    <meta
+      name="twitter:description"
+      content="Revolutionary AI-powered LiDAR drone platform transforming energy exploration with real-time seismic intelligence and sustainable solutions."
+    />
+    <meta
+      name="twitter:image"
+      content="https://seismic-ai.vercel.app/twitter-image.jpg"
+    />
+    <meta
+      name="twitter:image:alt"
+      content="Seismic AI drone technology platform"
+    />
+
+    <!-- LinkedIn specific -->
+    <meta property="og:type" content="article" />
+    <meta property="article:author" content="Seismic AI" />
+    <meta property="article:section" content="Technology" />
+    <meta
+      property="article:tag"
+      content="AI, LiDAR, Energy Exploration, Drones"
+    />
+
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00E5FF" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="theme-color" content="#000000" />
 
     <!-- Performance optimizations -->
     <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
@@ -11,87 +112,160 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- Critical CSS will be inlined here by Vite -->
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-    /></noscript>
-
-    <link
-      rel="preload"
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-      as="style"
-      onload="this.onload=null;this.rel='stylesheet'"
-    />
-    <noscript
-      ><link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
-    /></noscript>
-
-    <title>Seismic AI - Redefining Energy Exploration</title>
-    <meta
-      name="description"
-      content="AI-powered LiDAR drone platform revolutionizing oil & gas exploration with real-time seismic intelligence and sustainable mining solutions."
-    />
-    <meta
-      name="keywords"
-      content="AI, LiDAR, drone technology, seismic analysis, energy exploration, oil and gas, mining, geophysics, machine learning"
-    />
-    <meta name="author" content="Seismic AI" />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://seismic-ai.vercel.app" />
-    <meta
-      property="og:title"
-      content="Seismic AI - Redefining Energy Exploration"
-    />
-    <meta
-      property="og:description"
-      content="AI-powered LiDAR drone platform revolutionizing oil & gas exploration with real-time seismic intelligence and sustainable mining solutions."
-    />
-    <meta property="og:site_name" content="Seismic AI" />
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://seismic-ai.vercel.app" />
-    <meta
-      property="twitter:title"
-      content="Seismic AI - Redefining Energy Exploration"
-    />
-    <meta
-      property="twitter:description"
-      content="AI-powered LiDAR drone platform revolutionizing oil & gas exploration with real-time seismic intelligence."
-    />
-
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Preload critical assets -->
+    <!-- Preload critical resources -->
     <link
       rel="preload"
       href="/src/assets/drone-hero-bg.mp4"
       as="video"
       type="video/mp4"
     />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+
+    <!-- Font loading with fallback -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+    <!-- Font loading with fallback -->
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      />
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      />
+    </noscript>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://seismic-ai.vercel.app/#organization",
+            "name": "Seismic AI",
+            "url": "https://seismic-ai.vercel.app/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://seismic-ai.vercel.app/logo.png",
+              "width": 512,
+              "height": 512
+            },
+            "sameAs": [
+              "https://linkedin.com/company/seismic-ai",
+              "https://twitter.com/SeismicAI"
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+1-825-747-2650",
+              "contactType": "customer service",
+              "areaServed": "Worldwide",
+              "availableLanguage": "English"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "Global"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://seismic-ai.vercel.app/#website",
+            "url": "https://seismic-ai.vercel.app/",
+            "name": "Seismic AI",
+            "description": "AI-powered LiDAR drone platform revolutionizing energy exploration",
+            "publisher": {
+              "@id": "https://seismic-ai.vercel.app/#organization"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://seismic-ai.vercel.app/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://seismic-ai.vercel.app/#webpage",
+            "url": "https://seismic-ai.vercel.app/",
+            "name": "Seismic AI - AI-Powered LiDAR Drone Technology for Energy Exploration",
+            "isPartOf": {
+              "@id": "https://seismic-ai.vercel.app/#website"
+            },
+            "about": {
+              "@id": "https://seismic-ai.vercel.app/#organization"
+            },
+            "description": "Revolutionary AI-powered LiDAR drone platform transforming oil & gas exploration with real-time seismic intelligence, sustainable mining solutions, and advanced geophysical analysis.",
+            "breadcrumb": {
+              "@id": "https://seismic-ai.vercel.app/#breadcrumb"
+            }
+          },
+          {
+            "@type": "BreadcrumbList",
+            "@id": "https://seismic-ai.vercel.app/#breadcrumb",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://seismic-ai.vercel.app/"
+              }
+            ]
+          },
+          {
+            "@type": "Service",
+            "name": "AI-Powered Seismic Analysis",
+            "description": "Advanced machine learning algorithms for real-time seismic data analysis and geological interpretation",
+            "provider": {
+              "@id": "https://seismic-ai.vercel.app/#organization"
+            },
+            "serviceType": "Geophysical Analysis",
+            "areaServed": "Worldwide"
+          },
+          {
+            "@type": "Service",
+            "name": "LiDAR Drone Technology",
+            "description": "High-precision LiDAR-equipped drone systems for detailed geological and topographical mapping",
+            "provider": {
+              "@id": "https://seismic-ai.vercel.app/#organization"
+            },
+            "serviceType": "Aerial Surveying",
+            "areaServed": "Worldwide"
+          },
+          {
+            "@type": "Service",
+            "name": "Energy Exploration Solutions",
+            "description": "Comprehensive solutions for oil, gas, and renewable energy exploration using AI and drone technology",
+            "provider": {
+              "@id": "https://seismic-ai.vercel.app/#organization"
+            },
+            "serviceType": "Energy Exploration",
+            "areaServed": "Worldwide"
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>

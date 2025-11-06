@@ -171,28 +171,6 @@ const Solution = () => {
           </motion.a>
         </div>
       </motion.div>
-
-      {/* AI Disclaimer */}
-      <motion.div
-        className="mt-8 bg-gradient-to-r from-orange-500/10 to-red-500/10 border border-orange-500/20 rounded-xl p-6"
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-        viewport={{ once: true }}
-      >
-        <p className="text-gray-300 font-inter text-sm leading-relaxed text-center">
-          <strong className="text-orange-400">AI Output Disclaimer:</strong> All
-          AI-generated predictions and analysis are for informational purposes
-          only. Professional geological validation is required before making
-          operational decisions.
-          <a
-            href="#ethics-ai"
-            className="text-neon hover:text-white transition-colors ml-1"
-          >
-            Learn more about our AI ethics →
-          </a>
-        </p>
-      </motion.div>
     </section>
   );
 };

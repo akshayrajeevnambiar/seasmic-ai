@@ -30,7 +30,11 @@ const PageLoader = () => (
 
 function AppContent() {
   const location = useLocation();
-  const hideNavbarRoutes = ["/privacy-policy", "/terms-of-use", "/ethics-ai-transparency"];
+  const hideNavbarRoutes = [
+    "/privacy-policy",
+    "/terms-of-use",
+    "/ethics-ai-transparency",
+  ];
   const shouldHideNavbar = hideNavbarRoutes.includes(location.pathname);
 
   return (

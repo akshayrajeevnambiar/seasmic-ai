@@ -1,0 +1,82 @@
+# Robots.txt for Seismic AI
+# Allow all web crawlers to access all content
+
+User-agent: *
+Allow: /
+
+# Priority pages for crawling
+Allow: /
+Allow: /privacy-policy
+Allow: /terms-of-use
+Allow: /ethics-ai-transparency
+
+# Disallow crawling of development and admin files
+Disallow: /src/
+Disallow: /_next/
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /.env*
+Disallow: /vite.config.*
+Disallow: /tsconfig.*
+Disallow: /tailwind.config.*
+Disallow: /postcss.config.*
+Disallow: /package*.json
+
+# Allow access to important assets and media
+Allow: /assets/
+Allow: *.css
+Allow: *.js
+Allow: *.png
+Allow: *.jpg
+Allow: *.jpeg
+Allow: *.gif
+Allow: *.svg
+Allow: *.webp
+Allow: *.mp4
+Allow: *.webm
+Allow: *.pdf
+
+# Sitemap location
+Sitemap: https://seismic-ai.vercel.app/sitemap.xml
+
+# Crawl delay to be respectful of server resources
+Crawl-delay: 1
+
+# Specific instructions for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+# Block malicious bots and scrapers
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /

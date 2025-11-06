@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Homepage -->
+  <url>
+    <loc>https://seismic-ai.vercel.app/</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://seismic-ai.vercel.app/og-image.jpg</image:loc>
+      <image:title>Seismic AI - AI-Powered LiDAR Drone Technology</image:title>
+      <image:caption>Revolutionary AI-powered LiDAR drone platform for energy exploration</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://seismic-ai.vercel.app/video-thumbnail.jpg</video:thumbnail_loc>
+      <video:title>Seismic AI Drone Technology Demo</video:title>
+      <video:description>Watch our AI-powered LiDAR drones in action, revolutionizing energy exploration with real-time seismic intelligence.</video:description>
+      <video:content_loc>https://seismic-ai.vercel.app/src/assets/drone-hero-bg.mp4</video:content_loc>
+      <video:duration>30</video:duration>
+      <video:view_count>1000</video:view_count>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://seismic-ai.vercel.app/privacy-policy</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Terms of Use -->
+  <url>
+    <loc>https://seismic-ai.vercel.app/terms-of-use</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- Ethics & AI Transparency -->
+  <url>
+    <loc>https://seismic-ai.vercel.app/ethics-ai-transparency</loc>
+    <lastmod>2025-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+</urlset>

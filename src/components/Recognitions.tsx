@@ -1,6 +1,3 @@
-import { motion } from "framer-motion";
-
-// Import recognition logos
 import nottinghamLogo from "../assets/nottingham-uni-logo.png";
 import britishEmbassyLogo from "../assets/british-embassy-logo.png";
 import mitLogo from "../assets/mit-logo.png";
@@ -11,118 +8,108 @@ import oxfordLogo from "../assets/oxford-logo.jpg";
 const Recognitions = () => {
   const recognitions = [
     {
-      logo: nottinghamLogo,
       title: "University of Nottingham",
       description: "Endorsed by the University of Nottingham 2014",
-      alt: "University of Nottingham Logo",
+      logo: nottinghamLogo,
     },
     {
-      logo: britishEmbassyLogo,
       title: "British Embassy",
       description: "Entrepreneur Endorsed in 2015 & 2016",
-      alt: "British Embassy Logo",
+      logo: britishEmbassyLogo,
     },
     {
-      logo: mitLogo,
       title: "MIT",
       description: "MIT GSW Global Start-Up Entrepreneurship Scholar 2016",
-      alt: "Massachusetts Institute of Technology Logo",
+      logo: mitLogo,
     },
     {
-      logo: ventureFestLogo,
       title: "VentureFest",
       description: "Top 20 Pitch deck in Venture Fest Feb 2016",
-      alt: "VentureFest Logo",
+      logo: ventureFestLogo,
     },
     {
-      logo: iitBombayLogo,
       title: "IIT Bombay",
       description: "Core- Team Members are from IIT-B",
-      alt: "IIT Bombay Logo",
+      logo: iitBombayLogo,
     },
     {
-      logo: oxfordLogo,
       title: "Oxford Entrepreneurs",
       description: "Member at Oxford Entrepreneurs",
-      alt: "Oxford Entrepreneurs Logo",
+      logo: oxfordLogo,
     },
   ];
 
   return (
-    <section id="recognitions" className="py-20 bg-design-black">
-      <div className="max-w-screen-xl mx-auto px-6">
+    <section
+      id="recognitions"
+      className="py-20 bg-design-black"
+      aria-labelledby="recognitions-heading"
+      role="region"
+    >
+      <div className="w-full px-6">
         {/* Section Header */}
-        <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          viewport={{ once: true }}
-        >
-          <motion.h2
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-inter"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
+        <header className="text-center mb-16">
+          <h2
+            id="recognitions-heading"
+            className="text-4xl md:text-5xl font-bold mb-6"
+            itemProp="headline"
           >
-            Current <span className="text-neon font-bold">Recognitions</span>
-          </motion.h2>
-
-          <motion.p
-            className="text-lg md:text-xl text-muted max-w-3xl mx-auto leading-relaxed font-inter"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-            viewport={{ once: true }}
+            <span className="text-white">Current </span>
+            <span className="text-design-cyan">Recognitions</span>
+          </h2>
+          <p
+            className="text-lg md:text-xl text-gray-400 max-w-4xl mx-auto leading-relaxed"
+            itemProp="description"
           >
             Trusted and recognized by leading institutions worldwide for our
             innovative approach to seismic exploration technology.
-          </motion.p>
-        </motion.div>
+          </p>
+        </header>
 
-        {/* Recognition Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {recognitions.map((recognition, index) => (
-            <motion.div
-              key={index}
-              className="glass-panel p-8 rounded-2xl group hover:border-neon/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: [0.22, 1, 0.36, 1],
-              }}
-              viewport={{ once: true, margin: "-50px" }}
-              whileHover={{
-                y: -5,
-                transition: { duration: 0.3 },
-              }}
-            >
-              {/* Logo Container */}
-              <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 flex items-center justify-center bg-white/10 rounded-xl group-hover:bg-white/15 transition-all duration-300">
+        {/* White Box with Recognition Cards */}
+        <div
+          className="bg-white rounded-lg p-8 md:p-12"
+          role="main"
+          aria-label="Academic and institutional recognitions"
+        >
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            role="list"
+            aria-label="List of institutional recognitions and achievements"
+          >
+            {recognitions.map((recognition) => (
+              <article
+                key={recognition.title}
+                className="text-center"
+                role="listitem"
+                itemScope
+                itemType="https://schema.org/Achievement"
+              >
+                <div className="w-20 h-20 mx-auto mb-4 flex items-center justify-center">
                   <img
                     src={recognition.logo}
-                    alt={recognition.alt}
+                    alt={`${recognition.title} logo - ${recognition.description}`}
+                    className="max-w-full max-h-full object-contain"
                     loading="lazy"
-                    className="max-w-16 max-h-16 object-contain transition-transform duration-300 group-hover:scale-110"
+                    decoding="async"
+                    width="80"
+                    height="80"
+                    itemProp="image"
+                    title={`Logo of ${recognition.title}`}
                   />
                 </div>
-              </div>
-
-              {/* Content */}
-              <div className="text-center">
-                <h3 className="text-xl font-semibold text-white mb-3 font-inter group-hover:text-neon transition-colors duration-300">
+                <h3
+                  className="text-xl font-bold text-gray-900 mb-2"
+                  itemProp="name"
+                >
                   {recognition.title}
                 </h3>
-                <p className="text-muted leading-relaxed font-inter text-sm">
+                <p className="text-gray-600 text-sm" itemProp="description">
                   {recognition.description}
                 </p>
-              </div>
-            </motion.div>
-          ))}
+              </article>
+            ))}
+          </div>
         </div>
       </div>
     </section>

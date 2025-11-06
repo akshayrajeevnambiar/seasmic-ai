@@ -237,16 +237,17 @@ const PrivacyPolicyPage: React.FC = () => {
                 (collectively, the "Services"). By using our Services, you
                 consent to the data practices described in this policy.
               </p>
-              
+
               <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-xl p-6 mb-6">
                 <h4 className="text-green-400 font-semibold mb-3 font-space flex items-center">
                   <Shield className="w-5 h-5 mr-2" />
                   Privacy-First Approach
                 </h4>
                 <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                  <strong>Our website prioritizes your privacy:</strong> We do NOT use cookies, 
-                  analytics tracking, or any data collection technologies. Only minimal sessionStorage 
-                  is used for basic UI functionality that gets cleared when you close your browser.
+                  <strong>Our website prioritizes your privacy:</strong> We do
+                  NOT use cookies, analytics tracking, or any data collection
+                  technologies. Only minimal sessionStorage is used for basic UI
+                  functionality that gets cleared when you close your browser.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-green-500/10 text-green-400 px-3 py-1 rounded-full text-xs font-medium">
@@ -263,7 +264,7 @@ const PrivacyPolicyPage: React.FC = () => {
                   </span>
                 </div>
               </div>
-              
+
               <div className="bg-gradient-to-r from-[#00E5FF]/10 to-blue-500/10 border border-[#00E5FF]/20 rounded-xl p-6">
                 <h4 className="text-[#00E5FF] font-semibold mb-3 font-space">
                   Key Principles
@@ -379,12 +380,11 @@ const PrivacyPolicyPage: React.FC = () => {
                       <li className="flex items-start space-x-3">
                         <div className="w-2 h-2 bg-[#00E5FF] rounded-full mt-2 flex-shrink-0"></div>
                         <div>
-                          <strong className="text-white">
-                            Website Usage:
-                          </strong>
+                          <strong className="text-white">Website Usage:</strong>
                           <span className="text-gray-300 ml-2">
-                            We do NOT collect usage analytics, page visits, or behavioral data. 
-                            Our website operates without tracking your activities.
+                            We do NOT collect usage analytics, page visits, or
+                            behavioral data. Our website operates without
+                            tracking your activities.
                           </span>
                         </div>
                       </li>
@@ -794,9 +794,7 @@ const PrivacyPolicyPage: React.FC = () => {
                         • Some information may be retained for legal compliance
                         (up to 7 years)
                       </li>
-                      <li>
-                        • No analytics data is collected or retained
-                      </li>
+                      <li>• No analytics data is collected or retained</li>
                     </ul>
                   </div>
 
@@ -810,8 +808,9 @@ const PrivacyPolicyPage: React.FC = () => {
                       </span>
                     </div>
                     <p className="text-gray-300 text-sm leading-relaxed mb-3">
-                      Minimal UI state data (loading screen preferences) is stored 
-                      only during your browser session and automatically deleted when you close the browser.
+                      Minimal UI state data (loading screen preferences) is
+                      stored only during your browser session and automatically
+                      deleted when you close the browser.
                     </p>
                     <ul className="space-y-1 text-gray-400 text-sm">
                       <li>
@@ -953,8 +952,10 @@ const PrivacyPolicyPage: React.FC = () => {
             >
               <div className="space-y-6">
                 <p className="text-gray-300 leading-relaxed">
-                  We prioritize your privacy by using minimal data storage technologies. 
-                  Our website does <strong className="text-[#00E5FF]">NOT use cookies</strong> for tracking or analytics.
+                  We prioritize your privacy by using minimal data storage
+                  technologies. Our website does{" "}
+                  <strong className="text-[#00E5FF]">NOT use cookies</strong>{" "}
+                  for tracking or analytics.
                 </p>
 
                 <div className="space-y-4">
@@ -963,12 +964,19 @@ const PrivacyPolicyPage: React.FC = () => {
                       What We Actually Use
                     </h4>
                     <p className="text-gray-300 text-sm mb-3">
-                      We only use browser sessionStorage for basic user interface functionality:
+                      We only use browser sessionStorage for basic user
+                      interface functionality:
                     </p>
                     <ul className="space-y-1 text-gray-300 text-sm">
-                      <li>• Remembering if you've seen the loading animation (session only)</li>
+                      <li>
+                        • Remembering if you've seen the loading animation
+                        (session only)
+                      </li>
                       <li>• No personal data is stored</li>
-                      <li>• Data is automatically cleared when you close your browser</li>
+                      <li>
+                        • Data is automatically cleared when you close your
+                        browser
+                      </li>
                       <li>• No tracking or analytics of any kind</li>
                     </ul>
                   </div>
@@ -978,7 +986,8 @@ const PrivacyPolicyPage: React.FC = () => {
                       What We Don't Use
                     </h4>
                     <p className="text-gray-300 text-sm mb-3">
-                      We explicitly do NOT use the following tracking technologies:
+                      We explicitly do NOT use the following tracking
+                      technologies:
                     </p>
                     <ul className="space-y-1 text-gray-300 text-sm">
                       <li>• ❌ HTTP Cookies</li>
@@ -996,9 +1005,10 @@ const PrivacyPolicyPage: React.FC = () => {
                     Privacy-First Approach
                   </h4>
                   <p className="text-gray-300 text-sm leading-relaxed mb-4">
-                    Our website is designed with privacy in mind. We don't track your behavior, 
-                    build profiles, or share your data with third parties. The minimal sessionStorage 
-                    we use enhances your experience without compromising your privacy.
+                    Our website is designed with privacy in mind. We don't track
+                    your behavior, build profiles, or share your data with third
+                    parties. The minimal sessionStorage we use enhances your
+                    experience without compromising your privacy.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     <div className="bg-[#00E5FF]/10 text-[#00E5FF] px-4 py-2 rounded-lg text-sm font-medium">
@@ -1043,7 +1053,7 @@ const PrivacyPolicyPage: React.FC = () => {
                       </div>
                       <div className="flex items-center space-x-3">
                         <Phone className="w-5 h-5 text-[#00E5FF]" />
-                        <span className="text-gray-300">+1 (555) 123-4567</span>
+                        <span className="text-gray-300">+1 (825) 747-2650</span>
                       </div>
                     </div>
                   </div>
