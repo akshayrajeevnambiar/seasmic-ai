@@ -65,6 +65,14 @@ const Footer = () => {
                 We design and deploy intelligent LiDAR systems for energy
                 companies navigating exploration complexity.
               </p>
+
+              <div className="text-muted font-inter text-sm leading-relaxed">
+                <p className="font-semibold text-white mb-2">Seismic AI</p>
+                <p>Light House Corporate Inc.</p>
+                <p>330 – 5th Avenue SW</p>
+                <p>Tower 1, Suite 1800</p>
+                <p>Calgary, AB T2P 0L4</p>
+              </div>
             </motion.div>
 
             {/* Services Column */}
@@ -188,24 +196,10 @@ const Footer = () => {
           }}
           viewport={{ once: true }}
         >
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+          <div className="flex flex-col md:flex-row justify-center items-center">
             <p className="text-muted text-sm font-inter">
               © 2025 Seismic AI. All rights reserved.
             </p>
-
-            {/* Developer Credit */}
-            <motion.div
-              className="text-center"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.2 }}
-            >
-              <p className="text-xs text-muted font-inter">
-                Developed by{" "}
-                <span className="text-neon hover:text-white transition-colors duration-300">
-                  Akshay Rajeev Nambiar
-                </span>
-              </p>
-            </motion.div>
           </div>
         </motion.div>
       </div>
