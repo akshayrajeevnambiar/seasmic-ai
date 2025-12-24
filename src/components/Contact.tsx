@@ -200,23 +200,51 @@ const Contact = () => {
 
             <div className="space-y-4">
               {contactInfo.map((info, index) => (
-                <motion.div
-                  key={index}
-                  whileHover={{ x: 5 }}
-                  className="flex items-center gap-4 p-4 rounded-lg bg-black/20 hover:bg-black/40 transition-colors duration-300"
-                >
-                  <div className="w-10 h-10 border border-neon/30 rounded-lg flex items-center justify-center">
-                    <info.icon size={18} className="text-neon" />
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-white mb-1 font-space">
-                      {info.title}
-                    </h4>
-                    <p className="text-muted text-sm font-inter">
-                      {info.detail}
-                    </p>
-                  </div>
-                </motion.div>
+                (info.title === "Phone" || info.title === "Email") ? (
+                  <a
+                    key={index}
+                    href={info.title === "Phone" ? `tel:${info.detail.replace(/[^\d+]/g, "")}` : `mailto:${info.detail}`}
+                    className="block"
+                    style={{ textDecoration: 'none' }}
+                    tabIndex={0}
+                    aria-label={info.title === "Phone" ? `Call ${info.detail}` : `Email ${info.detail}`}
+                  >
+                    <motion.div
+                      whileHover={{ x: 5 }}
+                      className="flex items-center gap-4 p-4 rounded-lg bg-black/20 hover:bg-black/40 transition-colors duration-300 cursor-pointer"
+                    >
+                      <div className="w-10 h-10 border border-neon/30 rounded-lg flex items-center justify-center">
+                        <info.icon size={18} className="text-neon" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-white mb-1 font-space">
+                          {info.title}
+                        </h4>
+                        <span className="text-muted text-sm font-inter hover:text-neon transition-colors duration-300">
+                          {info.detail}
+                        </span>
+                      </div>
+                    </motion.div>
+                  </a>
+                ) : (
+                  <motion.div
+                    key={index}
+                    whileHover={{ x: 5 }}
+                    className="flex items-center gap-4 p-4 rounded-lg bg-black/20 hover:bg-black/40 transition-colors duration-300"
+                  >
+                    <div className="w-10 h-10 border border-neon/30 rounded-lg flex items-center justify-center">
+                      <info.icon size={18} className="text-neon" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-white mb-1 font-space">
+                        {info.title}
+                      </h4>
+                      <p className="text-muted text-sm font-inter">
+                        {info.detail}
+                      </p>
+                    </div>
+                  </motion.div>
+                )
               ))}
             </div>
           </div>
