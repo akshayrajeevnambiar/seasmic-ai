@@ -27,7 +27,7 @@ const PageLoader = () => (
     </div>
   </div>
 );
-
+// AppContent component
 function AppContent() {
   const location = useLocation();
   const hideNavbarRoutes = [
