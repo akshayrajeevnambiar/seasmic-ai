@@ -21,6 +21,7 @@ const SeismicSurveyingPage = lazy(() => import("./pages/SeismicSurveyingPage"));
 const LidarDroneTechnologyPage = lazy(() => import("./pages/LidarDroneTechnologyPage"));
 const AiDataAnalyticsPage = lazy(() => import("./pages/AiDataAnalyticsPage"));
 const DigitalTerrainMappingPage = lazy(() => import("./pages/DigitalTerrainMappingPage"));
+const EnergyExplorationPage = lazy(() => import("./pages/EnergyExplorationPage"));
 
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
@@ -54,6 +55,7 @@ function AppContent() {
           <Route path="/services/lidar-drone-technology" element={<LidarDroneTechnologyPage />} />
           <Route path="/services/ai-data-analytics" element={<AiDataAnalyticsPage />} />
           <Route path="/services/digital-terrain-mapping" element={<DigitalTerrainMappingPage />} />
+          <Route path="/services/energy-exploration" element={<EnergyExplorationPage />} />
         </Routes>
       </Suspense>
       <Footer />

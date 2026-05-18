@@ -62,7 +62,8 @@ async function prerender() {
         '/services/seismic-surveying',
         '/services/lidar-drone-technology',
         '/services/ai-data-analytics',
-        '/services/digital-terrain-mapping'
+        '/services/digital-terrain-mapping',
+        '/services/energy-exploration'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
