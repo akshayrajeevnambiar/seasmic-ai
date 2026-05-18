@@ -58,7 +58,8 @@ async function prerender() {
         '/',
         '/privacy-policy',
         '/terms-of-use',
-        '/ethics-ai-transparency'
+        '/ethics-ai-transparency',
+        '/services/seismic-surveying'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');

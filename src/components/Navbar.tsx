@@ -40,11 +40,13 @@ const Navbar = () => {
             whileHover={{ scale: 1.02 }}
             className="flex items-center"
           >
-            <img
-              src={seismicaLogo}
-              alt="Seismic AI Logo"
-              className="w-20 h-20 object-contain"
-            />
+            <a href="/">
+              <img
+                src={seismicaLogo}
+                alt="Seismic AI Logo"
+                className="w-20 h-20 object-contain"
+              />
+            </a>
           </motion.div>
 
           {/* Desktop Navigation */}
