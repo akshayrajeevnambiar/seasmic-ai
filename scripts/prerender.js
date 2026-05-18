@@ -61,7 +61,8 @@ async function prerender() {
         '/ethics-ai-transparency',
         '/services/seismic-surveying',
         '/services/lidar-drone-technology',
-        '/services/ai-data-analytics'
+        '/services/ai-data-analytics',
+        '/services/digital-terrain-mapping'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
