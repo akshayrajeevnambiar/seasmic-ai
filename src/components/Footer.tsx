@@ -98,6 +98,8 @@ const Footer = () => {
                           ? "/services/seismic-surveying" 
                           : service === "LiDAR Drone Technology"
                           ? "/services/lidar-drone-technology"
+                          : service === "AI Data Analytics"
+                          ? "/services/ai-data-analytics"
                           : "#"
                       }
                       className="text-muted hover:text-neon transition-colors duration-300 font-inter"

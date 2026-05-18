@@ -60,7 +60,8 @@ async function prerender() {
         '/terms-of-use',
         '/ethics-ai-transparency',
         '/services/seismic-surveying',
-        '/services/lidar-drone-technology'
+        '/services/lidar-drone-technology',
+        '/services/ai-data-analytics'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
