@@ -108,6 +108,8 @@ const Footer = () => {
                           ? "/services/environmental-impact-assessment"
                           : service === "Remote Sensing Solutions"
                           ? "/services/remote-sensing-solutions"
+                          : service === "Geophysical Intelligence"
+                          ? "/services/geophysical-intelligence"
                           : "#"
                       }
                       className="text-muted hover:text-neon transition-colors duration-300 font-inter"

@@ -24,6 +24,7 @@ const DigitalTerrainMappingPage = lazy(() => import("./pages/DigitalTerrainMappi
 const EnergyExplorationPage = lazy(() => import("./pages/EnergyExplorationPage"));
 const EnvironmentalImpactAssessmentPage = lazy(() => import("./pages/EnvironmentalImpactAssessmentPage"));
 const RemoteSensingSolutionsPage = lazy(() => import("./pages/RemoteSensingSolutionsPage"));
+const GeophysicalIntelligencePage = lazy(() => import("./pages/GeophysicalIntelligencePage"));
 
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
@@ -60,6 +61,7 @@ function AppContent() {
           <Route path="/services/energy-exploration" element={<EnergyExplorationPage />} />
           <Route path="/services/environmental-impact-assessment" element={<EnvironmentalImpactAssessmentPage />} />
           <Route path="/services/remote-sensing-solutions" element={<RemoteSensingSolutionsPage />} />
+          <Route path="/services/geophysical-intelligence" element={<GeophysicalIntelligencePage />} />
         </Routes>
       </Suspense>
       <Footer />

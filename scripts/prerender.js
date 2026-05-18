@@ -65,7 +65,8 @@ async function prerender() {
         '/services/digital-terrain-mapping',
         '/services/energy-exploration',
         '/services/environmental-impact-assessment',
-        '/services/remote-sensing-solutions'
+        '/services/remote-sensing-solutions',
+        '/services/geophysical-intelligence'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
