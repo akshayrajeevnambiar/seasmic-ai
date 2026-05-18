@@ -59,7 +59,8 @@ async function prerender() {
         '/privacy-policy',
         '/terms-of-use',
         '/ethics-ai-transparency',
-        '/services/seismic-surveying'
+        '/services/seismic-surveying',
+        '/services/lidar-drone-technology'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');

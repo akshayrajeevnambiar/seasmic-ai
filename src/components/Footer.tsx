@@ -93,7 +93,13 @@ const Footer = () => {
                 {services.map((service, index) => (
                   <li key={index}>
                     <a
-                      href={service === "Seismic Surveying" ? "/services/seismic-surveying" : "#"}
+                      href={
+                        service === "Seismic Surveying" 
+                          ? "/services/seismic-surveying" 
+                          : service === "LiDAR Drone Technology"
+                          ? "/services/lidar-drone-technology"
+                          : "#"
+                      }
                       className="text-muted hover:text-neon transition-colors duration-300 font-inter"
                     >
                       {service}

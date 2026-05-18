@@ -18,6 +18,7 @@ const PrivacyPolicyPage = lazy(() => import("./pages/PrivacyPolicyPage"));
 const TermsOfUsePage = lazy(() => import("./pages/TermsOfUsePage"));
 const EthicsAIPage = lazy(() => import("./pages/EthicsAIPage"));
 const SeismicSurveyingPage = lazy(() => import("./pages/SeismicSurveyingPage"));
+const LidarDroneTechnologyPage = lazy(() => import("./pages/LidarDroneTechnologyPage"));
 
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
@@ -48,6 +49,7 @@ function AppContent() {
           <Route path="/terms-of-use" element={<TermsOfUsePage />} />
           <Route path="/ethics-ai-transparency" element={<EthicsAIPage />} />
           <Route path="/services/seismic-surveying" element={<SeismicSurveyingPage />} />
+          <Route path="/services/lidar-drone-technology" element={<LidarDroneTechnologyPage />} />
         </Routes>
       </Suspense>
       <Footer />
