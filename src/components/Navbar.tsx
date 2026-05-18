@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
 import seismicaLogo from "../assets/seismica-logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,11 +18,22 @@ const Navbar = () => {
   }, []);
 
   const navItems = [
-    { name: "Solution", href: "#solution" },
-    { name: "Features", href: "#features" },
-    { name: "Technology", href: "#technology" },
-    { name: "Team", href: "#team" },
-    { name: "Contact", href: "#contact" },
+    { name: "Solution", href: "/#solution" },
+    { name: "Features", href: "/#features" },
+    { name: "Technology", href: "/#technology" },
+    { name: "Team", href: "/#team" },
+    { name: "Contact", href: "/#contact" },
+  ];
+
+  const services = [
+    { name: "Seismic Surveying", href: "/services/seismic-surveying" },
+    { name: "LiDAR Drone Technology", href: "/services/lidar-drone-technology" },
+    { name: "AI Data Analytics", href: "/services/ai-data-analytics" },
+    { name: "Digital Terrain Mapping", href: "/services/digital-terrain-mapping" },
+    { name: "Energy Exploration", href: "/services/energy-exploration" },
+    { name: "Environmental Impact Assessment", href: "/services/environmental-impact-assessment" },
+    { name: "Remote Sensing Solutions", href: "/services/remote-sensing-solutions" },
+    { name: "Geophysical Intelligence", href: "/services/geophysical-intelligence" },
   ];
 
   return (
@@ -51,6 +64,41 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesOpen(true)}
+              onMouseLeave={() => setIsServicesOpen(false)}
+            >
+              <button className="flex items-center space-x-1 text-muted hover:text-neon transition-colors duration-300 font-medium font-inter text-sm outline-none">
+                <span>Services</span>
+                <ChevronDown size={16} className={`transition-transform duration-300 ${isServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              <AnimatePresence>
+                {isServicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    transition={{ duration: 0.2 }}
+                    className="absolute top-full left-0 mt-6 w-[500px] bg-black/95 backdrop-blur-md border border-white/[0.08] rounded-xl shadow-[0_0_40px_rgba(0,229,255,0.1)] overflow-hidden grid grid-cols-2 p-3 gap-2"
+                  >
+                    {/* Invisible bridge to prevent hover loss */}
+                    <div className="absolute -top-6 left-0 right-0 h-6 bg-transparent"></div>
+                    {services.map((service) => (
+                      <a
+                        key={service.name}
+                        href={service.href}
+                        className="px-4 py-3 text-sm text-gray-300 hover:text-[#00E5FF] hover:bg-[#00E5FF]/[0.05] border border-transparent hover:border-[#00E5FF]/10 rounded-lg transition-all duration-300 font-inter flex flex-col"
+                      >
+                        {service.name}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -61,7 +109,7 @@ const Navbar = () => {
               </a>
             ))}
             <motion.a
-              href="#contact"
+              href="/#contact"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="btn-ghost px-6 py-2 text-sm font-semibold font-inter"
@@ -80,13 +128,45 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation */}
+        <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="md:hidden glass-panel mt-4 p-6 border border-white/[0.08]"
+            className="md:hidden bg-black/95 backdrop-blur-xl rounded-2xl shadow-2xl mt-4 p-6 border border-white/[0.08] max-h-[85vh] overflow-y-auto"
           >
+            <div>
+              <button 
+                onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                className="w-full flex items-center justify-between py-3 text-muted hover:text-neon transition-colors duration-300 font-inter"
+              >
+                <span>Services</span>
+                <ChevronDown size={16} className={`transition-transform duration-300 ${isMobileServicesOpen ? 'rotate-180' : ''}`} />
+              </button>
+              <AnimatePresence>
+                {isMobileServicesOpen && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: 'auto', opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    className="overflow-hidden pl-4 border-l border-white/[0.08] ml-2 mt-1 space-y-2 mb-2"
+                  >
+                    {services.map((service) => (
+                      <a
+                        key={service.name}
+                        href={service.href}
+                        className="block py-2 text-sm text-gray-400 hover:text-[#00E5FF] transition-colors duration-300 font-inter"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {service.name}
+                      </a>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+            
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -98,7 +178,7 @@ const Navbar = () => {
               </a>
             ))}
             <a
-              href="#contact"
+              href="/#contact"
               className="block mt-4 btn-ghost text-center font-inter"
               onClick={() => setIsOpen(false)}
             >
@@ -106,6 +186,7 @@ const Navbar = () => {
             </a>
           </motion.div>
         )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

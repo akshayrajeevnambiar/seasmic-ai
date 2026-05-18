@@ -35,6 +35,33 @@ const PageLoader = () => (
     </div>
   </div>
 );
+function ScrollToHash() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const tryScroll = (retries = 10) => {
+        const element = document.getElementById(id);
+        if (element) {
+          const headerOffset = 80; // approximate navbar height
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - headerOffset;
+          window.scrollTo({
+             top: offsetPosition,
+             behavior: "smooth"
+          });
+        } else if (retries > 0) {
+          setTimeout(() => tryScroll(retries - 1), 300);
+        }
+      };
+      setTimeout(() => tryScroll(), 100);
+    }
+  }, [location]);
+
+  return null;
+}
+
 // AppContent component
 function AppContent() {
   const location = useLocation();
@@ -47,6 +74,7 @@ function AppContent() {
 
   return (
     <div className="min-h-screen bg-black text-white overflow-x-hidden">
+      <ScrollToHash />
       {!shouldHideNavbar && <Navbar />}
       <Suspense fallback={<PageLoader />}>
         <Routes>
