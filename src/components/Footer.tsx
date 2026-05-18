@@ -106,6 +106,8 @@ const Footer = () => {
                           ? "/services/energy-exploration"
                           : service === "Environmental Impact Assessment"
                           ? "/services/environmental-impact-assessment"
+                          : service === "Remote Sensing Solutions"
+                          ? "/services/remote-sensing-solutions"
                           : "#"
                       }
                       className="text-muted hover:text-neon transition-colors duration-300 font-inter"
