@@ -104,6 +104,8 @@ const Footer = () => {
                           ? "/services/digital-terrain-mapping"
                           : service === "Energy Exploration"
                           ? "/services/energy-exploration"
+                          : service === "Environmental Impact Assessment"
+                          ? "/services/environmental-impact-assessment"
                           : "#"
                       }
                       className="text-muted hover:text-neon transition-colors duration-300 font-inter"

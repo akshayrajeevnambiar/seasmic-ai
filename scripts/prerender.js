@@ -63,7 +63,8 @@ async function prerender() {
         '/services/lidar-drone-technology',
         '/services/ai-data-analytics',
         '/services/digital-terrain-mapping',
-        '/services/energy-exploration'
+        '/services/energy-exploration',
+        '/services/environmental-impact-assessment'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
