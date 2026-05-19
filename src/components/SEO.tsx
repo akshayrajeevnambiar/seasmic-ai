@@ -34,36 +34,38 @@ export function SEO({ pageKey, title, description, image, url, type = "website",
     const organizationSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Your Company Name",
-        "alternateName": "Your Company Alternate Name",
+        "name": "Seismic AI",
+        "alternateName": "Seismic AI Technologies Inc.",
         "url": siteUrl,
         "logo": `${siteUrl}/favicon.svg`,
-        "description": "Your company description goes here.",
+        "description": "Revolutionary AI-powered LiDAR drone platform transforming energy exploration and geophysical analysis.",
         "foundingDate": "2024",
-        "slogan": "Your Company Slogan",
+        "slogan": "Transforming Energy Exploration with AI",
         "knowsAbout": [
-            "Your", "Industry", "Keywords"
+            "Geophysics", "AI Seismic Analysis", "LiDAR Drone Technology", "Energy Exploration", "Remote Sensing"
         ],
         "sameAs": [
-            "https://www.linkedin.com/company/your-company",
-            "https://twitter.com/your_company"
+            "https://www.linkedin.com/company/seismic-ai",
+            "https://twitter.com/seismic_ai"
         ],
         "address": {
             "@type": "PostalAddress",
-            "addressCountry": "US"
+            "addressLocality": "Toronto",
+            "addressRegion": "ON",
+            "addressCountry": "CA"
         },
         "contactPoint": [
             {
                 "@type": "ContactPoint",
                 "contactType": "Business Inquiries",
-                "email": "hello@your-domain.com",
+                "email": "hello@seasmic.ai",
                 "telephone": "+18001234567",
                 "url": `${siteUrl}/#contact`
             }
         ],
-        "areaServed": ["US", "CA", "GB"],
+        "areaServed": ["US", "CA", "GB", "Global"],
         "serviceType": [
-            "Your Service 1", "Your Service 2"
+            "AI Data Analytics", "Digital Terrain Mapping", "Geophysical Intelligence", "Energy Exploration"
         ]
     };
 

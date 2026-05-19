@@ -173,31 +173,6 @@ const EthicsAIPage: React.FC<EthicsAIPageProps> = ({
     </section>
   );
 
-  // JSON-LD structured data
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: `Ethics & AI Transparency | ${brandName}`,
-    description: `Comprehensive ethics and AI transparency documentation for ${brandName}, covering principles, governance, fairness, safety, and compliance.`,
-    url: `https://${brandName
-      .toLowerCase()
-      .replace(" ", "")}.ca/ethics-ai-transparency`,
-    mainEntity: {
-      "@type": "Organization",
-      name: companyName,
-      ethicsPolicy: `https://${brandName
-        .toLowerCase()
-        .replace(" ", "")}.ca/ethics-ai-transparency`,
-      hasPolicy: [
-        {
-          "@type": "DigitalDocument",
-          name: "AI Ethics Policy",
-          description: "Comprehensive AI ethics and transparency policy",
-        },
-      ],
-    },
-  };
-
   return (
     <>
       <SEO pageKey="ethics" />
