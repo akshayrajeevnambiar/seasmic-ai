@@ -9,7 +9,7 @@ import {
   Gavel,
   Mail,
 } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "../components/SEO";
 
 const TermsOfUsePage: React.FC = () => {
   const [showBackToTop, setShowBackToTop] = useState(false);
@@ -91,38 +91,7 @@ const TermsOfUsePage: React.FC = () => {
       className="min-h-screen bg-[#0B0B0C] text-white"
       style={{ scrollBehavior: "smooth" }}
     >
-      <Helmet>
-        <title>Terms & Conditions | Seismic AI</title>
-        <meta name="description" content="Terms and Conditions for Seismic AI's website and services." />
-        <meta name="keywords" content="terms and conditions, seismic AI, terms of service" />
-        <link rel="canonical" href="https://seismicai.ca/terms-of-use" />
-        
-        {/* OpenGraph */}
-        <meta property="og:title" content="Terms & Conditions | Seismic AI" />
-        <meta property="og:description" content="Legal terms governing the use of Seismic AI's website and services." />
-        <meta property="og:url" content="https://seismicai.ca/terms-of-use" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Seismic AI" />
-        
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Terms & Conditions | Seismic AI" />
-        <meta name="twitter:description" content="Legal terms for Seismic AI's website." />
-        
-        {/* JSON-LD Schema */}
-        <script type="application/ld+json">{JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "TermsOfService",
-          "name": "Seismic AI Terms & Conditions",
-          "url": "https://seismicai.ca/terms-of-use",
-          "dateModified": "2025-12-17",
-          "publisher": {
-            "@type": "Organization",
-            "name": "Seismic AI",
-            "url": "https://seismicai.ca"
-          }
-        })}</script>
-      </Helmet>
+      <SEO pageKey="terms" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Title */}

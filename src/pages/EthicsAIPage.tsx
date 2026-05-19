@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "../components/SEO";
 import {
   ArrowUp,
   Shield,
@@ -200,54 +200,7 @@ const EthicsAIPage: React.FC<EthicsAIPageProps> = ({
 
   return (
     <>
-      <Helmet>
-        <title>Ethics & AI Transparency | {brandName}</title>
-        <meta
-          name="description"
-          content={`Comprehensive ethics and AI transparency documentation for ${brandName}, covering principles, governance, fairness, safety, and compliance.`}
-        />
-        <meta
-          name="keywords"
-          content="AI ethics, transparency, governance, fairness, bias, safety, compliance, responsible AI"
-        />
-        <link
-          rel="canonical"
-          href={`https://${brandName
-            .toLowerCase()
-            .replace(" ", "")}.ca/ethics-ai-transparency`}
-        />
-
-        {/* Open Graph */}
-        <meta
-          property="og:title"
-          content={`Ethics & AI Transparency | ${brandName}`}
-        />
-        <meta
-          property="og:description"
-          content={`Comprehensive ethics and AI transparency documentation for ${brandName}`}
-        />
-        <meta property="og:type" content="article" />
-        <meta
-          property="og:url"
-          content={`https://${brandName
-            .toLowerCase()
-            .replace(" ", "")}.ca/ethics-ai-transparency`}
-        />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta
-          name="twitter:title"
-          content={`Ethics & AI Transparency | ${brandName}`}
-        />
-        <meta
-          name="twitter:description"
-          content={`Comprehensive ethics and AI transparency documentation for ${brandName}`}
-        />
-
-        {/* JSON-LD */}
-        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
-      </Helmet>
+      <SEO pageKey="ethics" />
 
       <div className="min-h-screen bg-[#0B0B0C] text-white">
         {/* Header */}

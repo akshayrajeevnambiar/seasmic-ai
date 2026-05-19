@@ -1,5 +1,5 @@
 import React, { Suspense, lazy } from "react";
-// import { Helmet } from "react-helmet";
+import { SEO } from "../components/SEO";
 
 // Always load Hero immediately for above-the-fold content
 import Hero from "../components/Hero.tsx";
@@ -33,26 +33,7 @@ const SectionLoader = () => (
 const HomePage: React.FC = () => {
   return (
     <>
-      {/* 
-      <Helmet>
-        <title>Seismic AI - Revolutionary AI-Powered LiDAR Drone Technology for Energy Exploration</title>
-        <meta name="description" content="Transform energy exploration with Seismic AI's revolutionary LiDAR drone platform. AI-powered seismic analysis, real-time geological mapping, and sustainable mining solutions. Trusted by leading institutions worldwide." />
-        <meta name="keywords" content="AI seismic analysis, LiDAR drone technology, energy exploration, oil and gas exploration, sustainable mining, geological surveying, real-time seismic data, machine learning geophysics, drone surveying, energy technology" />
-        
-        <meta property="og:title" content="Seismic AI - Revolutionary AI-Powered LiDAR Drone Technology" />
-        <meta property="og:description" content="Transform energy exploration with our AI-powered LiDAR drone platform. Real-time seismic analysis, geological mapping, and sustainable solutions." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://seismic-ai.vercel.app/" />
-        <meta property="og:image" content="https://seismic-ai.vercel.app/og-homepage.jpg" />
-        <meta property="og:image:alt" content="Seismic AI drone technology in action - aerial view of energy exploration" />
-        
-        <meta name="twitter:title" content="Seismic AI - Revolutionary LiDAR Drone Technology" />
-        <meta name="twitter:description" content="AI-powered drone platform transforming energy exploration with real-time seismic intelligence." />
-        <meta name="twitter:image" content="https://seismic-ai.vercel.app/twitter-homepage.jpg" />
-        
-        <link rel="canonical" href="https://seismic-ai.vercel.app/" />
-      </Helmet>
-      */}
+      <SEO pageKey="home" />
 
       <main role="main" itemScope itemType="https://schema.org/WebPage">
         <Hero />

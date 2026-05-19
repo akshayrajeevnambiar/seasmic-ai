@@ -16,7 +16,7 @@ import {
   Phone,
 } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { SEO } from "../components/SEO";
 
 const PrivacyPolicyPage: React.FC = () => {
   const [activeSection, setActiveSection] = useState<string>("");
@@ -123,52 +123,7 @@ const PrivacyPolicyPage: React.FC = () => {
       className="min-h-screen bg-[#0B0B0C] text-white"
       style={{ scrollBehavior: "smooth" }}
     >
-      <Helmet>
-        <title>Privacy Policy | Seismic AI</title>
-        <meta
-          name="description"
-          content="Seismic AI's enterprise-grade Privacy Policy outlining our data collection, use, storage, and protection standards for AI-powered geophysical analysis."
-        />
-        <meta
-          name="keywords"
-          content="privacy policy, data protection, GDPR, seismic AI, geophysical data, privacy rights"
-        />
-        <link rel="canonical" href="https://seismicai.ca/privacy-policy" />
-
-        {/* OpenGraph */}
-        <meta property="og:title" content="Privacy Policy | Seismic AI" />
-        <meta
-          property="og:description"
-          content="Seismic AI's enterprise-grade Privacy Policy outlining our data collection, use, storage, and protection standards."
-        />
-        <meta property="og:url" content="https://seismicai.ca/privacy-policy" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Seismic AI" />
-
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Privacy Policy | Seismic AI" />
-        <meta
-          name="twitter:description"
-          content="Enterprise-grade privacy standards for AI-powered geophysical analysis."
-        />
-
-        {/* JSON-LD Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "PrivacyPolicy",
-            name: "Seismic AI Privacy Policy",
-            url: "https://seismicai.ca/privacy-policy",
-            dateModified: "2025-01-01",
-            publisher: {
-              "@type": "Organization",
-              name: "Seismic AI",
-              url: "https://seismicai.ca",
-            },
-          })}
-        </script>
-      </Helmet>
+      <SEO pageKey="privacy" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Page Title - Inline with content */}

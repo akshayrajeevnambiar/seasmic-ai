@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { SEO } from "../components/SEO";
 import { motion } from "framer-motion";
 import { 
   ArrowRight, 
@@ -21,7 +22,7 @@ const DigitalTerrainMappingPage: React.FC = () => {
 
   return (
     <main className="bg-black text-white min-h-screen font-inter" role="main">
-      
+      <SEO pageKey="digitalTerrainMapping" />
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden border-b border-white/[0.08]">
         {/* Background Gradients */}
