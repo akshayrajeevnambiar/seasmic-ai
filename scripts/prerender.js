@@ -97,7 +97,7 @@ async function prerender() {
             console.log(`Saved ${distPath}`);
         }
 
-        const baseUrl = 'https://seasmic.ai'; 
+        const baseUrl = 'https://seismicai.ca';
         
         fs.writeFileSync(path.join(distFolder, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${baseUrl}/sitemap.xml`);
         console.log('Saved robots.txt');

@@ -28,7 +28,7 @@ export function SEO({ pageKey, title, description, image, url, type = "website",
     };
 
     // Adjust fallback URL to match the new project's domain
-    const siteUrl = import.meta.env.VITE_BASE_URL || "https://seasmic.ai";
+    const siteUrl = import.meta.env.VITE_BASE_URL || "https://seismicai.ca";
 
     // Base JSON-LD (Organization) - Update these details for the new company
     const organizationSchema = {
@@ -58,7 +58,7 @@ export function SEO({ pageKey, title, description, image, url, type = "website",
             {
                 "@type": "ContactPoint",
                 "contactType": "Business Inquiries",
-                "email": "hello@seasmic.ai",
+                "email": "hello@seismicai.ca",
                 "telephone": "+18001234567",
                 "url": `${siteUrl}/#contact`
             }

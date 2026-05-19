@@ -7,7 +7,7 @@ export interface PageSEO {
 }
 
 // Adjust the fallback URL to match the new project's domain
-const baseUrl = import.meta.env.VITE_BASE_URL || "https://seasmic.ai";
+const baseUrl = import.meta.env.VITE_BASE_URL || "https://seismicai.ca";
 
 export const seoConfig: Record<string, PageSEO> = {
     home: {
