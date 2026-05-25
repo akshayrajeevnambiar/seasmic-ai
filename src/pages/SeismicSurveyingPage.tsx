@@ -79,7 +79,7 @@ const SeismicSurveyingPage: React.FC = () => {
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <motion.div 
           {...animations.fadeInUp}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-left"
         >
           <p className="text-lg text-gray-300 leading-relaxed">
             By combining LiDAR drone systems, automated seismic interpretation, and real-time geophysical analytics, our platform modernizes traditional exploration methods for faster and more accurate decision-making. Traditional seismic acquisition workflows often involve heavy equipment, extended field operations, and lengthy interpretation cycles that increase project costs and operational risk. Seismic AI replaces these limitations with digital exploration technologies designed to improve survey efficiency, terrain intelligence, and geospatial accuracy across complex energy environments.

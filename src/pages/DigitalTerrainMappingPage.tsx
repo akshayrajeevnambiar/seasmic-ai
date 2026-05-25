@@ -79,7 +79,7 @@ const DigitalTerrainMappingPage: React.FC = () => {
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <motion.div 
           {...animations.fadeInUp}
-          className="max-w-4xl mx-auto text-center"
+          className="max-w-4xl mx-auto text-left"
         >
           <h2 className="text-3xl font-space font-bold mb-6">Built for Modern Terrain and Geospatial Analysis</h2>
           <p className="text-lg text-gray-300 leading-relaxed mb-6">
