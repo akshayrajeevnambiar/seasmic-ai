@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { SEO } from "../../components/SEO";
 import { motion } from "framer-motion";
 import { ArrowRight, BookOpen } from "lucide-react";
-import { animations } from "../../constants/design";
 
 import img1 from "../../assets/blog/blog_peak_oil_demand_1780200815263.png";
 import img2 from "../../assets/blog/blog_iot_oil_gas_1780200831040.png";
@@ -62,12 +61,12 @@ const BlogIndexPage: React.FC = () => {
   return (
     <main className="bg-black text-white min-h-screen font-inter" role="main">
       <SEO pageKey="blogIndex" />
-      
+
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-6 lg:px-12 overflow-hidden border-b border-white/[0.08]">
         {/* Background Gradients */}
         <div className="absolute top-0 left-1/2 w-[800px] h-[800px] bg-[#00E5FF]/5 rounded-full blur-[120px] pointer-events-none mix-blend-screen translate-y-[-50%] -translate-x-1/2"></div>
-        
+
         <div className="max-w-screen-xl mx-auto relative z-10 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -78,11 +77,11 @@ const BlogIndexPage: React.FC = () => {
               <BookOpen className="w-4 h-4 text-[#00E5FF]" />
               <span className="text-sm font-medium text-gray-300">Insights & Innovations</span>
             </div>
-            
+
             <h1 className="text-5xl lg:text-7xl font-bold font-space leading-tight mb-6">
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00E5FF] to-blue-500">Seismic AI Blog</span>
             </h1>
-            
+
             <p className="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto mb-8">
               Explore the latest insights, industry trends, and technological breakthroughs shaping the future of energy exploration, geophysical intelligence, and AI-driven data analytics.
             </p>
@@ -94,7 +93,7 @@ const BlogIndexPage: React.FC = () => {
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogPosts.map((post, idx) => (
-            <motion.div 
+            <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -104,13 +103,13 @@ const BlogIndexPage: React.FC = () => {
             >
               <div className="relative overflow-hidden aspect-video">
                 <div className="absolute inset-0 bg-[#00E5FF]/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay duration-500"></div>
-                <img 
-                  src={post.image} 
-                  alt={post.title} 
+                <img
+                  src={post.image}
+                  alt={post.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
               </div>
-              
+
               <div className="p-6 flex flex-col flex-grow">
                 <div className="text-sm text-[#00E5FF] mb-3 font-medium">{post.date}</div>
                 <h2 className="text-2xl font-space font-bold mb-3 text-white group-hover:text-[#00E5FF] transition-colors line-clamp-2">
@@ -119,7 +118,7 @@ const BlogIndexPage: React.FC = () => {
                 <p className="text-gray-400 mb-6 line-clamp-3 text-sm leading-relaxed flex-grow">
                   {post.excerpt}
                 </p>
-                <Link 
+                <Link
                   to={post.link}
                   className="inline-flex items-center space-x-2 text-white font-medium group-hover:text-[#00E5FF] transition-colors mt-auto"
                 >
@@ -141,9 +140,9 @@ const BlogIndexPage: React.FC = () => {
             Subscribe to our newsletter for the latest updates on AI, spatial computing, and digital transformation in the energy sector.
           </p>
           <div className="flex flex-col sm:flex-row justify-center max-w-md mx-auto gap-4">
-            <input 
-              type="email" 
-              placeholder="Enter your email address" 
+            <input
+              type="email"
+              placeholder="Enter your email address"
               className="bg-black/50 border border-white/[0.1] rounded-md px-6 py-4 text-white focus:outline-none focus:border-[#00E5FF] flex-grow transition-colors"
             />
             <button className="btn-primary flex items-center justify-center gap-2 px-8 py-4 bg-[#00E5FF] text-black font-semibold rounded-md hover:bg-white transition-colors duration-300 whitespace-nowrap">

@@ -66,7 +66,13 @@ async function prerender() {
         '/services/energy-exploration',
         '/services/environmental-impact-assessment',
         '/services/remote-sensing-solutions',
-        '/services/geophysical-intelligence'
+        '/services/geophysical-intelligence',
+        '/blog',
+        '/blog/peak-oil-demand',
+        '/blog/iot-in-oil-and-gas',
+        '/blog/industry-outlook-2026',
+        '/blog/future-canadian-oil-and-gas',
+        '/blog/spatial-computing-digital-twins'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');
