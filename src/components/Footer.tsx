@@ -151,6 +151,12 @@ const Footer = () => {
               {/* Legal & Compliance Links */}
               <div className="space-y-3 mb-8">
                 <a
+                  href="/blog"
+                  className="text-white hover:text-neon transition-colors duration-300 font-inter font-medium block"
+                >
+                  Insights & Blog
+                </a>
+                <a
                   href="/privacy-policy"
                   target="_blank"
                   rel="noopener noreferrer"

@@ -1,0 +1,149 @@
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import { SEO } from "../../components/SEO";
+import { motion } from "framer-motion";
+import { ArrowLeft, Share2, Calendar, Clock } from "lucide-react";
+import { animations } from "../../constants/design";
+
+import heroImg from "../../assets/blog/blog_peak_oil_demand_1780200815263.png";
+
+const PeakOilDemandPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  return (
+    <main className="bg-black text-white min-h-screen font-inter" role="main">
+      <SEO 
+        pageKey="blogPeakOilDemand" 
+        type="article" 
+        articleMeta={{
+          publishedTime: "2025-11-25T00:00:00Z",
+          author: "Seismic AI Insights Team",
+          tags: ["Peak Oil Demand", "Drilling Innovation", "AI Sensors"]
+        }}
+      />
+      
+      {/* Article Header */}
+      <section className="relative pt-32 pb-16 px-6 lg:px-12 border-b border-white/[0.08]">
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-[#00E5FF]/10 rounded-full blur-[120px] pointer-events-none mix-blend-screen translate-y-[-50%]"></div>
+        
+        <div className="max-w-screen-md mx-auto relative z-10">
+          <Link to="/blog" className="inline-flex items-center space-x-2 text-[#00E5FF] hover:text-white transition-colors mb-8 text-sm font-medium">
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to Blog</span>
+          </Link>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="flex flex-wrap items-center gap-4 text-sm text-gray-400 mb-6">
+              <span className="px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] text-[#00E5FF]">Industry Insights</span>
+              <div className="flex items-center gap-1.5"><Calendar className="w-4 h-4" /> Nov 25, 2025</div>
+              <div className="flex items-center gap-1.5"><Clock className="w-4 h-4" /> 4 min read</div>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold font-space leading-tight mb-8">
+              Peak Oil Demand: A Decade Away and Opportunities for Drilling Innovation
+            </h1>
+            
+            <div className="flex items-center justify-between py-6 border-y border-white/[0.08] mb-12">
+              <div className="flex items-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#00E5FF] to-blue-600 p-0.5">
+                  <div className="w-full h-full bg-black rounded-full flex items-center justify-center font-bold font-space text-sm">SAI</div>
+                </div>
+                <div>
+                  <div className="font-bold text-white">Seismic AI Insights Team</div>
+                  <div className="text-sm text-gray-400">Research & Intelligence</div>
+                </div>
+              </div>
+              <button className="w-10 h-10 rounded-full border border-white/[0.1] flex items-center justify-center hover:bg-white/[0.05] hover:border-[#00E5FF] transition-colors group">
+                <Share2 className="w-4 h-4 text-gray-400 group-hover:text-[#00E5FF] transition-colors" />
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Featured Image */}
+      <section className="px-6 lg:px-12 -mt-8 relative z-20 max-w-screen-xl mx-auto">
+        <motion.div 
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="aspect-video w-full rounded-2xl overflow-hidden border border-white/[0.1] shadow-2xl relative"
+        >
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent z-10"></div>
+          <img src={heroImg} alt="Futuristic oil rig at sunset" className="w-full h-full object-cover" />
+        </motion.div>
+      </section>
+
+      {/* Article Content */}
+      <section className="py-20 px-6 max-w-screen-md mx-auto">
+        <motion.div 
+          {...animations.fadeInUp}
+          className="article-content text-lg text-gray-300 leading-relaxed"
+        >
+          <p className="mb-8 text-xl text-gray-200">
+            Goldman Sachs’ recent analysis indicates that <strong className="text-white">global oil demand is unlikely to reach its peak until the mid-2030s</strong>, reflecting sustained growth in emerging markets and ongoing energy requirements in industrialised economies.
+          </p>
+
+          <h2 className="text-3xl font-space font-bold text-white mt-12 mb-6">Long-Term Outlook</h2>
+          <p className="mb-6">
+            Despite the global transition towards renewables, oil remains indispensable for transportation, manufacturing, and petrochemical industries. Goldman Sachs forecasts steady growth in oil consumption, with energy efficiency gains and structural shifts moderating but not reversing overall demand.
+          </p>
+
+          <h2 className="text-3xl font-space font-bold text-white mt-12 mb-6">Implications for Drilling and Sensor Technology</h2>
+          <p className="mb-6">
+            The delayed peak in oil demand offers a strategic window for investment in <strong className="text-white">advanced drilling technologies and AI-enabled sensor systems</strong>:
+          </p>
+          <ul className="space-y-4 mb-8">
+            <li className="flex items-start space-x-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] mt-2.5 shrink-0"></div>
+              <span><strong className="text-white">Operational Efficiency:</strong> Intelligent sensors and real-time analytics optimise drilling processes, reduce downtime, and lower operational costs.</span>
+            </li>
+            <li className="flex items-start space-x-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] mt-2.5 shrink-0"></div>
+              <span><strong className="text-white">Predictive Maintenance:</strong> AI models identify equipment wear and potential failures early, mitigating risk and enhancing asset longevity.</span>
+            </li>
+            <li className="flex items-start space-x-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#00E5FF] mt-2.5 shrink-0"></div>
+              <span><strong className="text-white">Environmental Compliance:</strong> Cutting-edge technology ensures adherence to emissions standards and safety regulations, supporting responsible operations.</span>
+            </li>
+          </ul>
+
+          <div className="my-12 p-8 glass-panel rounded-2xl border border-[#00E5FF]/20 bg-[#00E5FF]/[0.02]">
+            <h2 className="text-2xl font-space font-bold text-[#00E5FF] mb-4">Seismic AI’s Perspective</h2>
+            <p className="mb-4">
+              At <strong className="text-white">Seismic AI</strong>, we provide <strong className="text-white">AI-driven drilling and monitoring solutions</strong> that enable oil and gas companies to maximise efficiency, improve safety, and maintain regulatory compliance. By integrating sensor data with predictive analytics, our solutions allow operators to optimise production while preparing for the evolving energy landscape.
+            </p>
+            <p>
+              Sustained oil demand highlights the importance of <strong className="text-white">technological innovation</strong>, not merely for operational gains but to ensure resilience and competitiveness in a dynamic market.
+            </p>
+          </div>
+
+          <p className="text-sm text-gray-500 mt-16 pt-8 border-t border-white/[0.1]">
+            <strong>Reference:</strong> Goldman Sachs, 2025. <em>Peak Oil Demand Is Still a Decade Away</em>. Available at: <a href="https://www.goldmansachs.com/insights/articles/peak-oil-demand-is-still-a-decade-away" target="_blank" rel="noopener noreferrer" className="text-[#00E5FF] hover:underline">goldmansachs.com</a> [Accessed 21 November 2025].
+          </p>
+        </motion.div>
+      </section>
+
+      {/* CTA Footer */}
+      <section className="py-20 border-t border-white/[0.08] bg-white/[0.01] px-6 text-center">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="text-3xl font-space font-bold mb-6">Explore the Future of Intelligent Energy</h2>
+          <p className="text-gray-400 mb-8">
+            Discover how Seismic AI is transforming drilling operations with intelligent technology.
+          </p>
+          <Link to="/services/geophysical-intelligence" className="btn-primary inline-flex items-center justify-center gap-2 px-8 py-4 bg-[#00E5FF] text-black font-semibold rounded-md hover:bg-white transition-colors duration-300">
+            Learn More About Our Solutions
+          </Link>
+        </div>
+      </section>
+    </main>
+  );
+};
+
+export default PeakOilDemandPage;

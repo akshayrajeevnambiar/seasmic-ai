@@ -26,6 +26,13 @@ const EnvironmentalImpactAssessmentPage = lazy(() => import("./pages/Environment
 const RemoteSensingSolutionsPage = lazy(() => import("./pages/RemoteSensingSolutionsPage"));
 const GeophysicalIntelligencePage = lazy(() => import("./pages/GeophysicalIntelligencePage"));
 
+// Blog pages
+const BlogIndexPage = lazy(() => import("./pages/blog/BlogIndexPage"));
+const PeakOilDemandPage = lazy(() => import("./pages/blog/PeakOilDemandPage"));
+const IoTInOilGasPage = lazy(() => import("./pages/blog/IoTInOilGasPage"));
+const IndustryOutlook2026Page = lazy(() => import("./pages/blog/IndustryOutlook2026Page"));
+const FutureCanadianOilGasPage = lazy(() => import("./pages/blog/FutureCanadianOilGasPage"));
+const SpatialComputingPage = lazy(() => import("./pages/blog/SpatialComputingPage"));
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
@@ -90,6 +97,12 @@ function AppContent() {
           <Route path="/services/environmental-impact-assessment" element={<EnvironmentalImpactAssessmentPage />} />
           <Route path="/services/remote-sensing-solutions" element={<RemoteSensingSolutionsPage />} />
           <Route path="/services/geophysical-intelligence" element={<GeophysicalIntelligencePage />} />
+          <Route path="/blog" element={<BlogIndexPage />} />
+          <Route path="/blog/peak-oil-demand" element={<PeakOilDemandPage />} />
+          <Route path="/blog/iot-in-oil-and-gas" element={<IoTInOilGasPage />} />
+          <Route path="/blog/industry-outlook-2026" element={<IndustryOutlook2026Page />} />
+          <Route path="/blog/future-canadian-oil-and-gas" element={<FutureCanadianOilGasPage />} />
+          <Route path="/blog/spatial-computing-digital-twins" element={<SpatialComputingPage />} />
         </Routes>
       </Suspense>
       <Footer />

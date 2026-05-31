@@ -93,5 +93,47 @@ export const seoConfig: Record<string, PageSEO> = {
         image: `${baseUrl}/assets/hero_geophysical_intelligence.png`,
         url: `${baseUrl}/services/geophysical-intelligence`,
         keywords: "geophysical intelligence, subsurface visibility, geological interpretation, exploration strategy",
+    },
+    blogIndex: {
+        title: "Insights & Innovations | Seismic AI Blog",
+        description: "Explore the latest insights on AI in oil & gas, spatial computing, predictive analytics, and the future of energy exploration.",
+        image: `${baseUrl}/assets/blog/blog_future_oil_gas_1780200870943.png`,
+        url: `${baseUrl}/blog`,
+        keywords: "seismic ai blog, energy exploration insights, ai in oil and gas, spatial computing blog",
+    },
+    blogPeakOilDemand: {
+        title: "Peak Oil Demand: A Decade Away | Seismic AI",
+        description: "Goldman Sachs forecasts peak oil demand is still a decade away. Discover opportunities for drilling innovation and advanced sensor technology.",
+        image: `${baseUrl}/assets/blog/blog_peak_oil_demand_1780200815263.png`,
+        url: `${baseUrl}/blog/peak-oil-demand`,
+        keywords: "peak oil demand, drilling innovation, ai sensor technology, oil and gas future",
+    },
+    blogIotOilGas: {
+        title: "Leveraging IoT in Oil & Gas | Seismic AI",
+        description: "Learn how intelligent sensors and IoT are driving efficiency, operational optimization, and predictive maintenance in the energy sector.",
+        image: `${baseUrl}/assets/blog/blog_iot_oil_gas_1780200831040.png`,
+        url: `${baseUrl}/blog/iot-in-oil-and-gas`,
+        keywords: "iot oil and gas, intelligent sensors, predictive maintenance, digital energy",
+    },
+    blogIndustryOutlook: {
+        title: "2026 Oil & Gas Industry Outlook | Seismic AI",
+        description: "Explore the accelerating digital transformation of the oil and gas sector in Canada, featuring AI, IoT, and advanced sensor systems.",
+        image: `${baseUrl}/assets/blog/blog_industry_outlook_1780200850086.png`,
+        url: `${baseUrl}/blog/industry-outlook-2026`,
+        keywords: "oil and gas outlook 2026, digital transformation canada, ai energy sector",
+    },
+    blogFutureOilGas: {
+        title: "The Future of Canadian Oil & Gas | Seismic AI",
+        description: "Discover the key trends shaping the Canadian oil and gas industry: digital transformation, sustainability, and operational resilience.",
+        image: `${baseUrl}/assets/blog/blog_future_oil_gas_1780200870943.png`,
+        url: `${baseUrl}/blog/future-canadian-oil-and-gas`,
+        keywords: "future canadian oil gas, energy sustainability, digital innovation oil gas",
+    },
+    blogSpatialComputing: {
+        title: "Spatial Computing & Digital Twins in Energy | Seismic AI",
+        description: "Unlock new industry advantages with spatial computing, LiDAR, and digital twin simulations for precision oil and gas operations.",
+        image: `${baseUrl}/assets/blog/blog_spatial_computing_1780200885096.png`,
+        url: `${baseUrl}/blog/spatial-computing-digital-twins`,
+        keywords: "spatial computing oil gas, digital twins energy, lidar mapping, 3d simulation",
     }
 };
