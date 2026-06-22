@@ -13,7 +13,7 @@ import img5 from "../../assets/blog/blog_spatial_computing_1780200885096.png";
 const blogPosts = [
   {
     id: 1,
-    title: "Peak Oil Demand: A Decade Away and Opportunities for Drilling Innovation",
+    title: "Peak Oil Demand: A Decade Away and Opportunities for Drilling Innovation..",
     excerpt: "Goldman Sachs forecasts peak oil demand is still a decade away. Discover opportunities for drilling innovation and advanced sensor technology.",
     image: img1,
     link: "/blog/peak-oil-demand",
