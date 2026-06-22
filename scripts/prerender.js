@@ -72,7 +72,18 @@ async function prerender() {
         '/blog/iot-in-oil-and-gas',
         '/blog/industry-outlook-2026',
         '/blog/future-canadian-oil-and-gas',
-        '/blog/spatial-computing-digital-twins'
+        '/blog/spatial-computing-digital-twins',
+        '/blog/what-is-seismic-data-analysis',
+        '/blog/how-ai-is-transforming-seismic-interpretation',
+        '/blog/hidden-cost-of-traditional-seismic-exploration',
+        '/blog/deep-learning-for-seismic-fault-detection',
+        '/blog/lidar-beam-scanning-vs-traditional-seismic-surveys',
+        '/blog/ai-in-canadian-oil-sands-exploration',
+        '/blog/how-seismicai-delivers-10x-faster-interpretation',
+        '/blog/seismic-intelligence-for-saudi-arabias-oil-and-gas-sector',
+        '/blog/benefits-of-ai-powered-geophysical-analytics',
+        '/blog/cloud-based-seismic-interpretation',
+        '/blog/seismicai-for-small-geophysics-teams'
     ];
 
     const distFolder = path.resolve(__dirname, '..', 'dist');

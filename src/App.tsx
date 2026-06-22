@@ -33,6 +33,17 @@ const IoTInOilGasPage = lazy(() => import("./pages/blog/IoTInOilGasPage"));
 const IndustryOutlook2026Page = lazy(() => import("./pages/blog/IndustryOutlook2026Page"));
 const FutureCanadianOilGasPage = lazy(() => import("./pages/blog/FutureCanadianOilGasPage"));
 const SpatialComputingPage = lazy(() => import("./pages/blog/SpatialComputingPage"));
+const WhatIsSeismicDataAnalysisPage = lazy(() => import("./pages/blog/WhatIsSeismicDataAnalysisPage"));
+const HowAITransformingSeismicPage = lazy(() => import("./pages/blog/HowAITransformingSeismicPage"));
+const HiddenCostTraditionalSeismicPage = lazy(() => import("./pages/blog/HiddenCostTraditionalSeismicPage"));
+const DeepLearningFaultDetectionPage = lazy(() => import("./pages/blog/DeepLearningFaultDetectionPage"));
+const LidarBeamVsTraditionalSeismicPage = lazy(() => import("./pages/blog/LidarBeamVsTraditionalSeismicPage"));
+const AiCanadianOilSandsPage = lazy(() => import("./pages/blog/AiCanadianOilSandsPage"));
+const HowSeismicAiDelivers10xFasterPage = lazy(() => import("./pages/blog/HowSeismicAiDelivers10xFasterPage"));
+const SeismicIntelligenceSaudiArabiaPage = lazy(() => import("./pages/blog/SeismicIntelligenceSaudiArabiaPage"));
+const BenefitsAiGeophysicalAnalyticsPage = lazy(() => import("./pages/blog/BenefitsAiGeophysicalAnalyticsPage"));
+const CloudBasedSeismicInterpretationPage = lazy(() => import("./pages/blog/CloudBasedSeismicInterpretationPage"));
+const SeismicAiSmallGeophysicsTeamsPage = lazy(() => import("./pages/blog/SeismicAiSmallGeophysicsTeamsPage"));
 // Loading component for lazy-loaded routes
 const PageLoader = () => (
   <div className="min-h-screen bg-black flex items-center justify-center">
@@ -103,6 +114,17 @@ function AppContent() {
           <Route path="/blog/industry-outlook-2026" element={<IndustryOutlook2026Page />} />
           <Route path="/blog/future-canadian-oil-and-gas" element={<FutureCanadianOilGasPage />} />
           <Route path="/blog/spatial-computing-digital-twins" element={<SpatialComputingPage />} />
+          <Route path="/blog/what-is-seismic-data-analysis" element={<WhatIsSeismicDataAnalysisPage />} />
+          <Route path="/blog/how-ai-is-transforming-seismic-interpretation" element={<HowAITransformingSeismicPage />} />
+          <Route path="/blog/hidden-cost-of-traditional-seismic-exploration" element={<HiddenCostTraditionalSeismicPage />} />
+          <Route path="/blog/deep-learning-for-seismic-fault-detection" element={<DeepLearningFaultDetectionPage />} />
+          <Route path="/blog/lidar-beam-scanning-vs-traditional-seismic-surveys" element={<LidarBeamVsTraditionalSeismicPage />} />
+          <Route path="/blog/ai-in-canadian-oil-sands-exploration" element={<AiCanadianOilSandsPage />} />
+          <Route path="/blog/how-seismicai-delivers-10x-faster-interpretation" element={<HowSeismicAiDelivers10xFasterPage />} />
+          <Route path="/blog/seismic-intelligence-for-saudi-arabias-oil-and-gas-sector" element={<SeismicIntelligenceSaudiArabiaPage />} />
+          <Route path="/blog/benefits-of-ai-powered-geophysical-analytics" element={<BenefitsAiGeophysicalAnalyticsPage />} />
+          <Route path="/blog/cloud-based-seismic-interpretation" element={<CloudBasedSeismicInterpretationPage />} />
+          <Route path="/blog/seismicai-for-small-geophysics-teams" element={<SeismicAiSmallGeophysicsTeamsPage />} />
         </Routes>
       </Suspense>
       <Footer />

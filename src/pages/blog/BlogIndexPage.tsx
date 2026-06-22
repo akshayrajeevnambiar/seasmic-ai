@@ -9,6 +9,11 @@ import img2 from "../../assets/blog/blog_iot_oil_gas_1780200831040.png";
 import img3 from "../../assets/blog/blog_industry_outlook_1780200850086.png";
 import img4 from "../../assets/blog/blog_future_oil_gas_1780200870943.png";
 import img5 from "../../assets/blog/blog_spatial_computing_1780200885096.png";
+import imgSeismicDataAnalysis from "../../assets/blog/blog_seismic_data_analysis.png";
+import imgAiTransformingSeismic from "../../assets/blog/blog_ai_transforming_seismic.png";
+import imgHiddenCostTraditional from "../../assets/blog/blog_hidden_cost_traditional.png";
+import imgDeepLearningFault from "../../assets/blog/blog_deep_learning_fault.png";
+import imgLidarBeamScanning from "../../assets/blog/blog_lidar_beam_scanning.png";
 
 const blogPosts = [
   {
@@ -50,6 +55,94 @@ const blogPosts = [
     image: img5,
     link: "/blog/spatial-computing-digital-twins",
     date: "November 29, 2025"
+  },
+  {
+    id: 6,
+    title: "What Is Seismic Data Analysis? A Beginner's Guide",
+    excerpt: "Discover what seismic data analysis is, how it works, and why AI is transforming subsurface mapping and energy exploration.",
+    image: imgSeismicDataAnalysis,
+    link: "/blog/what-is-seismic-data-analysis",
+    date: "January 15, 2026"
+  },
+  {
+    id: 7,
+    title: "How AI Is Transforming Seismic Interpretation in 2026",
+    excerpt: "Learn how machine learning, deep learning, and automated processing are revolutionizing geophysics, cutting interpretation cycle times by 10x.",
+    image: imgAiTransformingSeismic,
+    link: "/blog/how-ai-is-transforming-seismic-interpretation",
+    date: "January 28, 2026"
+  },
+  {
+    id: 8,
+    title: "The Hidden Cost of Traditional Seismic Exploration — And How AI Fixes It",
+    excerpt: "Uncover the massive hidden costs of legacy workflows, manual interpretations, and how AI platforms deliver real exploration ROI.",
+    image: imgHiddenCostTraditional,
+    link: "/blog/hidden-cost-of-traditional-seismic-exploration",
+    date: "February 12, 2026"
+  },
+  {
+    id: 9,
+    title: "Deep Learning for Seismic Fault Detection: A Technical Overview",
+    excerpt: "Dive deep into how convolutional neural networks (CNNs) automate 3D seismic fault mapping with over 95% accuracy.",
+    image: imgDeepLearningFault,
+    link: "/blog/deep-learning-for-seismic-fault-detection",
+    date: "February 25, 2026"
+  },
+  {
+    id: 10,
+    title: "LiDAR Beam Scanning vs. Traditional Seismic Surveys: A Side-by-Side",
+    excerpt: "A detailed comparison of LiDAR drone technology versus traditional ground seismic surveys on speed, cost, and environmental impact.",
+    image: imgLidarBeamScanning,
+    link: "/blog/lidar-beam-scanning-vs-traditional-seismic-surveys",
+    date: "March 10, 2026"
+  },
+  {
+    id: 11,
+    title: "AI in Canadian Oil Sands Exploration: Opportunities & Challenges",
+    excerpt: "Explore how AI geophysics, drone surveying, and intelligent analytics are modernizing bitumen reservoir characterization in Alberta's oil sands.",
+    image: img4,
+    link: "/blog/ai-in-canadian-oil-sands-exploration",
+    date: "March 24, 2026"
+  },
+  {
+    id: 12,
+    title: "How SeismicAI Delivers 10x Faster Interpretation — Case Study",
+    excerpt: "A case study demonstrating how automated horizon picking and AI fault detection compress exploration timelines from months to days.",
+    image: imgAiTransformingSeismic,
+    link: "/blog/how-seismicai-delivers-10x-faster-interpretation",
+    date: "April 14, 2026"
+  },
+  {
+    id: 13,
+    title: "Seismic Intelligence for Saudi Arabia's Oil & Gas Sector",
+    excerpt: "Discover how AI-powered geophysical intelligence is supporting Saudi Vision 2030 and GCC energy exploration.",
+    image: img3,
+    link: "/blog/seismic-intelligence-for-saudi-arabias-oil-and-gas-sector",
+    date: "April 27, 2026"
+  },
+  {
+    id: 14,
+    title: "The Benefits of AI-Powered Geophysical Analytics for E&P Companies",
+    excerpt: "A comprehensive business case detailing how AI analytics reduce drilling risk, accelerate timelines, and lower operating costs for E&P firms.",
+    image: imgSeismicDataAnalysis,
+    link: "/blog/benefits-of-ai-powered-geophysical-analytics",
+    date: "May 12, 2026"
+  },
+  {
+    id: 15,
+    title: "Cloud-Based Seismic Interpretation: Why the Industry Is Shifting",
+    excerpt: "Examine the technical and collaborative benefits driving the geophysics industry to cloud-native SaaS interpretation platforms.",
+    image: img2,
+    link: "/blog/cloud-based-seismic-interpretation",
+    date: "May 26, 2026"
+  },
+  {
+    id: 16,
+    title: "SeismicAI for Small Geophysics Teams: Maximum ROI, Minimal Complexity",
+    excerpt: "How boutique geoscience consultancies and lean operators leverage cloud-native AI tools to level the playing field against major oil firms.",
+    image: img5,
+    link: "/blog/seismicai-for-small-geophysics-teams",
+    date: "June 09, 2026"
   }
 ];
 
@@ -57,6 +150,10 @@ const BlogIndexPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const sortedBlogPosts = [...blogPosts].sort(
+    (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+  );
 
   return (
     <main className="bg-black text-white min-h-screen font-inter" role="main">
@@ -92,7 +189,7 @@ const BlogIndexPage: React.FC = () => {
       {/* Blog Grid */}
       <section className="py-20 px-6 max-w-screen-xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post, idx) => (
+          {sortedBlogPosts.map((post, idx) => (
             <motion.div
               key={post.id}
               initial={{ opacity: 0, y: 30 }}
